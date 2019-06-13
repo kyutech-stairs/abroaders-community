@@ -13,3 +13,11 @@ require "csv"
 CSV.foreach('db/csv/country.csv') do |country|
   Country.create(name: country[0])
 end
+
+CSV.foreach('db/csv/sex.csv') do |sex|
+    Sex.create(name: sex[0])
+end
+
+CSV.foreach('db/csv/language.csv') do |lang|
+    Language.create(name: lang[0])
+end
