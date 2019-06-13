@@ -6,8 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#csv ファイルをここに読み込んでcreateをfしたらfor文みたいにできる
+#csvのファイルを読み込ませるとcreateを何回も書かなくても実行できる
+
 require "csv"
+
+CSV.foreach('db/csv/country.csv') do |country|
+  Country.create(name: country[0])
+end
 
 CSV.foreach('db/csv/sex.csv') do |sex|
     Sex.create(name: sex[0])
