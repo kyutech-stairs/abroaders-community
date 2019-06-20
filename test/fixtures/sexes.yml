@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+#typeを使用した時沢山のエラーが出ましたがnameに変換したらエラーが減らしまた
+one:
+  name: MyString
+
+two:
+  name: MyString
