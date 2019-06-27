@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#new'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
-  post '/login', to: 'static_pages#home'
+  post '/login', to: 'users#index'
   delete '/logout', to:'sessions#destroy'
-  resources :users
-
+  # resources :users
+  resources :users, :only => [:index, :show]
+  root "users#index"
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
 end
