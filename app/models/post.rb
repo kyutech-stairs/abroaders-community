@@ -15,8 +15,8 @@ class Post < ApplicationRecord
     validates :purpose, presence: true, length: { maximum: 100}
     validates :term, presence: true, length: { maximum: 50}
     validates :flight_plan, presence: true, length: { maximum: 300}
-    validates: photo, presence: true, length: { maximum: 140}
-    validates: movie, presence: true, length: { maximum: 140}
+    #validates: photo, presence: true
+    #validates: movie, presence: true
     validates: budget, presence: true, length: { maximum: 50}
     validates: language_level, presence: true, length: { maximum: 300}
     validates: comment_impression, presence: true
@@ -28,5 +28,8 @@ class Post < ApplicationRecord
     validates: comment_advice, presence: true
     validates: comment_accident, presence: true
     validates: comment_anxiety, presence: true
+
+    mount_uploader :image, ImageUploader
+    mount_uploader :video, VideoUploader
 
 end
