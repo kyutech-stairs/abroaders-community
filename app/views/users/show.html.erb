@@ -11,7 +11,7 @@
 
 <h2><%= @user.email %></h2>
 
-<% if @user.id == current_user.id %>
+<% if @user.id == current_user&.id %>
 
 <% else %>
   <% if @isRoom == true %>
