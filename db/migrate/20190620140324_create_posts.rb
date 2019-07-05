@@ -13,7 +13,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :purpose
       t.string :term
       t.string :flight_plan
-      t.string :photo
+      t.string :psot_image
       t.string :movie
       t.string :budget
       t.string :language_level

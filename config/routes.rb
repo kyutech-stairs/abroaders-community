@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :users
 
   get '/posts', to: 'posts#show'
-  post '/posts/create', to: 'posts#create'
+  post '/posts', to: 'posts#create'
 end
