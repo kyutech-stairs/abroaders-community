@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+    def new
+    end
+
     def show 
         @post = Post.all
     end
@@ -6,6 +9,7 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(permit_params)
         @post.save!
+        # redirect_to :show
         redirect_to action: 'show'
     end
 

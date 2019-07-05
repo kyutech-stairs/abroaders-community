@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
   #get 'users/index'
-  #et 'users/show'
+  #get 'users/show'
   #get 'sessions/new'
   root 'static_pages#home'
-  # get 'static_pages/home',    to: 'static_pages#home'
   #root "users#index"
   get '/help',    to: 'static_pages#help'
   get  '/about',    to: 'static_pages#about'
@@ -22,5 +21,5 @@ Rails.application.routes.draw do
   resources :users
 
   get '/posts', to: 'posts#show'
-  post '/posts/create', to: 'posts#create'
+  post '/posts', to: 'posts#show'
 end
