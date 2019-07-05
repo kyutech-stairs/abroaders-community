@@ -16,6 +16,7 @@ end
 
 CSV.foreach('db/csv/stay.csv') do |stay|
     Stay.create(name: stay[0])
+end
 
 CSV.foreach('db/csv/country.csv') do |country|
   Country.create(name: country[0])

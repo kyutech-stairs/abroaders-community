@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_135157) do
+ActiveRecord::Schema.define(version: 2019_07_01_112842) do
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,44 @@ ActiveRecord::Schema.define(version: 2019_06_27_135157) do
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_messages_on_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "country_id"
+    t.bigint "stay_id"
+    t.bigint "kind_id"
+    t.bigint "user_id"
+    t.bigint "language_id"
+    t.string "region"
+    t.string "school"
+    t.string "school_address"
+    t.string "major"
+    t.string "purpose"
+    t.string "term"
+    t.string "flight_plan"
+    t.string "photo"
+    t.string "movie"
+    t.string "budget"
+    t.string "language_level"
+    t.text "comment_impression"
+    t.text "comment_school"
+    t.text "comment_food"
+    t.text "comment_stay"
+    t.text "comment_manner"
+    t.text "comment_social"
+    t.text "comment_advice"
+    t.text "comment_accident"
+    t.text "comment_anxiety"
+    t.bigint "bookmark_id"
+    t.bigint "like_id"
+    t.string "image"
+    t.index ["bookmark_id"], name: "index_posts_on_bookmark_id"
+    t.index ["country_id"], name: "index_posts_on_country_id"
+    t.index ["kind_id"], name: "index_posts_on_kind_id"
+    t.index ["language_id"], name: "index_posts_on_language_id"
+    t.index ["like_id"], name: "index_posts_on_like_id"
+    t.index ["stay_id"], name: "index_posts_on_stay_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

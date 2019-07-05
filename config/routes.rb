@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'static_pages#home'
   # resources :users
   
+  resources :users
+
+  get '/posts', to: 'posts#show'
+  post '/posts/create', to: 'posts#create'
 end
