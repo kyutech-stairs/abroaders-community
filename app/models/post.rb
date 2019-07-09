@@ -1,18 +1,21 @@
 class Post < ApplicationRecord
-    # belongs_to :country
-    # belongs_to :stay
-    # belongs_to :kind
-     #belongs_to :user
-    # belongs_to :language
+    # collection_select(:page, :name, @categories, :id, :name, :include_blank => true)
+    #collection_select :country_id, Country.all, :id, :name
+    # collection_select :country
+     belongs_to :stay
+    belongs_to :kind
+     belongs_to :user
+    belongs_to :language
+    belongs_to :country
 
-    # belongs_to :bookmark
-    # belongs_to :like
+# 　   belongs_to :bookmark
+     belongs_to :like
 
-    validates :country_id, presence: true
-    validates :stay_id, presence: true
-    validates :kind_id, presence: true
-    validates :user_id, presence: true
-    validates :language_id, presence: true
+    # collection_select :country_id, presence: true
+    # validates :stay_id, presence: true
+    # validates :kind_id, presence: true
+    # validates :user_id, presence: true
+    # validates :language_id, presence: true
 
     validates :bookmark_id, presence: true
     validates :like_id, presence: true
@@ -41,4 +44,7 @@ class Post < ApplicationRecord
     mount_uploader :image, ImageUploader
     mount_uploader :video, VideoUploader
 
+    # def country
+    #     return Country.find_by(id: self.country_id)
+    #   end
 end

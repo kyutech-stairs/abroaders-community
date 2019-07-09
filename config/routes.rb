@@ -20,6 +20,13 @@ Rails.application.routes.draw do
   
   resources :users
 
-  get '/posts', to: 'posts#show'
-  post '/posts', to: 'posts#show'
+#   get '/posts', to: 'posts#show'
+#   post '/posts', to: 'posts#show'
+
+get '/posts', to: 'posts#new'
+ post '/posts', to: 'posts#new'
+
+ get '/posts/create', to: 'posts#show'
+ post '/posts/create', to: 'posts#show'
+
 end

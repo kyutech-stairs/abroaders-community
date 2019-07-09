@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
     def new
+        @post = Post.new
+        @post = Post.all
     end
 
     def show 
-        @post = Post.all
+        @post = Post.find_by(id: params[:id])
+        # @country = Country.find_by(id: @post.country_id )
+        # @post = Post.all
     end
 
     def create
