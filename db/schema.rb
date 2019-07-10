@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_112842) do
+ActiveRecord::Schema.define(version: 2019_06_27_135157) do
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -77,7 +77,8 @@ ActiveRecord::Schema.define(version: 2019_07_01_112842) do
     t.text "comment_anxiety"
     t.bigint "bookmark_id"
     t.bigint "like_id"
-    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["bookmark_id"], name: "index_posts_on_bookmark_id"
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["kind_id"], name: "index_posts_on_kind_id"
@@ -112,6 +113,8 @@ ActiveRecord::Schema.define(version: 2019_07_01_112842) do
     t.datetime "updated_at", null: false
     t.bigint "sex_id"
     t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["sex_id"], name: "index_users_on_sex_id"
   end
 
