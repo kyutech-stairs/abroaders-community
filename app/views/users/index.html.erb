@@ -1,13 +1,17 @@
-<h1>DM for Abrry</h1>
-<% if logged_in? %>
-<h2>Hello <%= current_user.email %></h2>
-  <% @users.each do |u| %>
-  <p><a href="/users/<%= u.id %>"><%= u.email %>さん</a></p>
-  <hr>
-  <% end %>
-  <%= link_to "ログアウト", logout_path, :method => :delete %>
-<% else %>
-  <%= link_to "ユーザーを登録する", signup_path %>
-  <br>
-  <%= link_to "ログインする", login_path %>
-<% end %>
+<html>
+  <body>
+    <h1>DM for Abrry</h1>
+    <% if logged_in? %>
+    <h2>Hello <%= current_user.email %></h2>
+      <% @users.each do |u| %>
+      <p><a href="/users/<%= u.id %>"><%= u.email %>さん</a></p>
+      <hr>
+      <% end %>
+      <%= link_to "ログアウト", logout_path, :method => :delete %>
+    <% else %>
+      <%= link_to "ユーザーを登録する", signup_path %>
+      <br>
+      <%= link_to "ログインする", login_path %>
+    <% end %>
+  </body>
+</html>

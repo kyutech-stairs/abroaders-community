@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(version: 2019_06_27_135157) do
     t.text "comment_anxiety"
     t.bigint "bookmark_id"
     t.bigint "like_id"
+<<<<<<< HEAD
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> 5397d7a1252ece2106b01ff6907f78d16f3db61e
     t.index ["bookmark_id"], name: "index_posts_on_bookmark_id"
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["kind_id"], name: "index_posts_on_kind_id"
@@ -113,6 +118,10 @@ ActiveRecord::Schema.define(version: 2019_06_27_135157) do
     t.datetime "updated_at", null: false
     t.bigint "sex_id"
     t.string "password_digest"
+<<<<<<< HEAD
+=======
+    t.index ["email"], name: "index_users_on_email", unique: true
+>>>>>>> 5397d7a1252ece2106b01ff6907f78d16f3db61e
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["sex_id"], name: "index_users_on_sex_id"
   end
