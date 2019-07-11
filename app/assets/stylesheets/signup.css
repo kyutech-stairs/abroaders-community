@@ -71,11 +71,14 @@ body {
   margin: 3em auto;
   padding: 0 1em;
   max-width: 370px;
+  font-size: 2em;
 }
 
-h1 {
+p {
   text-align: center;
   padding: 1em 0;
+  font-family: Didot;
+
 }
 
 form {
