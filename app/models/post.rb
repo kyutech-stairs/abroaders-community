@@ -1,9 +1,29 @@
 class Post < ApplicationRecord
+<<<<<<< HEAD
     #belongs_to :country
     #belongs_to :stay
     #belongs_to :kind
     #belongs_to :user
     #belongs_to :language
+=======
+    # belongs_to :country
+    # belongs_to :stay
+    # belongs_to :kind
+     #belongs_to :user
+    # belongs_to :language
+
+    # belongs_to :bookmark
+    # belongs_to :like
+
+    validates :country_id, presence: true
+    validates :stay_id, presence: true
+    validates :kind_id, presence: true
+    validates :user_id, presence: true
+    validates :language_id, presence: true
+
+    validates :bookmark_id, presence: true
+    validates :like_id, presence: true
+>>>>>>> 8ecd54d6dee5b28cb5d7a6e75bc6691f040ae8d5
 
     #belongs_to :bookmark
     #belongs_to :like
@@ -17,8 +37,13 @@ class Post < ApplicationRecord
     validates :purpose, presence: true, length: { maximum: 100}
     validates :term, presence: true, length: { maximum: 50}
     validates :flight_plan, presence: true, length: { maximum: 300}
+<<<<<<< HEAD
     #validates :photo, presence: true
     #validates :movie, presence: true
+=======
+    #validates: photo, presence: true
+    #validates: movie, presence: true
+>>>>>>> 8ecd54d6dee5b28cb5d7a6e75bc6691f040ae8d5
     validates :budget, presence: true, length: { maximum: 50}
     validates :language_level, presence: true, length: { maximum: 300}
     validates :comment_impression, presence: true

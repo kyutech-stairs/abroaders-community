@@ -1,4 +1,4 @@
-class CreatePosts < ActiveRecord::Migration[5.2]
+class CreatePosts < ActiveRecord::Migration[5.2] 
   def change
     create_table :posts do |t|
       t.references :country
@@ -30,5 +30,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.references :bookmark
       t.references :like
     end
+    add_index :posts, [:user_id, :created_at]
   end
 end
