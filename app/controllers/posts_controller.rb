@@ -23,11 +23,34 @@ class PostsController < ApplicationController
 
     private
         def permit_params
-            params.require(:posts).permit(:country_id, :stay_id, :bookmark_id, :kind_id, :user_id, :like_id, :language_id, :image, :video, :region, :school, :school_address,
-            :major, :purpose, :term, :flight_plan, :budget, :language_level, :comment_impression,
-            :comment_school, :comment_food, :comment_stay, :comment_manner, :comment_social,
-            :comment_advice, :comment_accident,:comment_anxiety
-            )
+            params.require(:posts).permit(
+              :country_id,
+              :stay_id,
+              :kind_id,
+              :language_id,
+              # :image,
+              :region,
+              :school,
+              :school_address,
+              :major,
+              :purpose,
+              :term,
+              :flight_plan,
+              :budget,
+              :language_level,
+          ).merge(user_id: @current_user.id)
         end
 
     end
+
+              # :bookmark_id,
+              # :like_id,
+    # :comment_impression,
+    # :comment_school,
+    # :comment_food,
+    # :comment_stay,
+    # :comment_manner,
+    # :comment_social,
+    # :comment_advice,
+    # :comment_accident,
+    # :comment_anxiety
