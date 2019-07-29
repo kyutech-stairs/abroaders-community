@@ -1,43 +1,26 @@
 class Post < ApplicationRecord
-<<<<<<< HEAD
-<<<<<<< HEAD
     #belongs_to :country
-    #belongs_to :stay
-    #belongs_to :kind
-    #belongs_to :user
-    #belongs_to :language
-=======
-    # belongs_to :country
+    belongs_to :stay
+    belongs_to :kind
+    belongs_to :user
+    belongs_to :language
+    belongs_to :country
     # belongs_to :stay
     # belongs_to :kind
      #belongs_to :user
     # belongs_to :language
-=======
     # collection_select(:page, :name, @categories, :id, :name, :include_blank => true)
     #collection_select :country_id, Country.all, :id, :name
     # collection_select :country
-     belongs_to :stay
-    belongs_to :kind
-     belongs_to :user
-    belongs_to :language
-    belongs_to :country
->>>>>>> 5397d7a1252ece2106b01ff6907f78d16f3db61e
-
-# 　   belongs_to :bookmark
-     belongs_to :like
-
+    # belongs_to :bookmark
+    # belongs_to :like
     # collection_select :country_id, presence: true
     # validates :stay_id, presence: true
     # validates :kind_id, presence: true
     # validates :user_id, presence: true
     # validates :language_id, presence: true
-
-    validates :bookmark_id, presence: true
-    validates :like_id, presence: true
->>>>>>> 8ecd54d6dee5b28cb5d7a6e75bc6691f040ae8d5
-
-    #belongs_to :bookmark
-    #belongs_to :like
+    # validates :bookmark_id, presence: true
+    # validates :like_id, presence: true
     validates :country_id, presence: true
     validates :stay_id, presence: true
     validates :kind_id, presence: true
@@ -48,24 +31,21 @@ class Post < ApplicationRecord
     validates :purpose, presence: true, length: { maximum: 100}
     validates :term, presence: true, length: { maximum: 50}
     validates :flight_plan, presence: true, length: { maximum: 300}
-<<<<<<< HEAD
     #validates :photo, presence: true
     #validates :movie, presence: true
-=======
     #validates: photo, presence: true
     #validates: movie, presence: true
->>>>>>> 8ecd54d6dee5b28cb5d7a6e75bc6691f040ae8d5
     validates :budget, presence: true, length: { maximum: 50}
     validates :language_level, presence: true, length: { maximum: 300}
-    validates :comment_impression, presence: true
-    validates :comment_school, presence: true
-    validates :comment_food, presence: true
-    validates :comment_stay, presence: true
-    validates :comment_manner, presence: true
-    validates :comment_social, presence: true
-    validates :comment_advice, presence: true
-    validates :comment_accident, presence: true
-    validates :comment_anxiety, presence: true
+    # validates :comment_impression, presence: true
+    # validates :comment_school, presence: true
+    # validates :comment_food, presence: true
+    # validates :comment_stay, presence: true
+    # validates :comment_manner, presence: true
+    # validates :comment_social, presence: true
+    # validates :comment_advice, presence: true
+    # validates :comment_accident, presence: true
+    # validates :comment_anxiety, presence: true
 
     mount_uploader :image, ImageUploader
     mount_uploader :video, VideoUploader
