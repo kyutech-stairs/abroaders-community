@@ -21,6 +21,10 @@ class PostsController < ApplicationController
         redirect_to action: 'show'
     end
 
+    def search
+        @post = Post.search(params[:search])
+    end
+
     private
         def permit_params
 <<<<<<< HEAD

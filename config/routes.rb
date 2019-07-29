@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   #root "users#index"
   get '/help',    to: 'static_pages#help'
   get  '/about',    to: 'static_pages#about'
+  get '/search',  to: 'static_pages#search'
 
   #post '/signup',  to: 'users#new'
   get '/signup', to: 'users#new'

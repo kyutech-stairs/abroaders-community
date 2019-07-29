@@ -70,6 +70,14 @@ class Post < ApplicationRecord
     mount_uploader :image, ImageUploader
     mount_uploader :video, VideoUploader
 
+    def self.search(search)
+        if search
+          Post.where(['content LIKE ?', "%#{search}%"])
+        else
+          Post.all
+        end
+      end
+
     # def country
     #     return Country.find_by(id: self.country_id)
     #   end
