@@ -1,56 +1,5 @@
-<% @post.each do |post| %> 
-    <%
-=begin%>
-#  <p>
-#         <%
-# =begin%>
-#  <%= post.name %><br> 
-# <%
-# =end%>
-#         <%= image_tag post.image.url %>
-#         <%
-# =begin%>
-#  <%= post.country %><br> 
-# <%
-# =end%>
-#     </p> 
-<%
-=end%>
-<% end %>
+<h1>new post</h1>
 
-<hr>
-<%= form_for :posts, url: 'posts/create' do |t| %>
-    <p><%=t.label "投稿者" %><br><%= t.text_field :name, placeholder: 'ハンドルネーム' %></p>
-    <p><%=t.label "画像をアップロード" %><br><%= t.file_field :image %></p>
-     <p><%=t.label "kuni" %><br><%= t.collection_select :country_id, Country.all, :id, :name %>
-      <p><%=t.label "stay" %><br><%= t.collection_select :stay_id, Stay.all, :id, :name %></p>
-      <p><%=t.label "kind" %><br><%= t.collection_select :kind_id, Kind.all, :id, :name %></p>
-      <%
-=begin%>
- <p><%=t.label "User" %><br><%= t.collection_select :user_id, User.all, :id, :name %></p> 
-<%
-=end%>
-      <p><%=t.label "Language" %><br><%= t.collection_select :language_id, Language.all, :id, :name %></p>
-      <p><%=t.label "Bookmark" %><br><%= t.text_field :bookmark_id, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "Like" %><br><%= t.text_field :like_id, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "Region" %><br><%= t.text_field :region, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "school" %><br><%= t.text_field :school, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "school address" %><br><%= t.text_field :school_address, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "Major" %><br><%= t.text_field :major, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "purpose" %><br><%= t.text_field :purpose, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "term" %><br><%= t.text_field :term, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "flight plan" %><br><%= t.text_field :flight_plan, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "budget" %><br><%= t.text_field :budget, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "language level" %><br><%= t.text_field :language_level, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c impression" %><br><%= t.text_field :comment_impression, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c school" %><br><%= t.text_field :comment_school, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c food" %><br><%= t.text_field :comment_food, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c stay" %><br><%= t.text_field :comment_stay, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c manner" %><br><%= t.text_field :comment_manner, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c social" %><br><%= t.text_field :comment_social, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c advice" %><br><%= t.text_field :comment_advice, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c accident" %><br><%= t.text_field :comment_accident, placeholder: 'ハンドルネーム' %></p>
-    <p><%=t.label "c anxiety" %><br><%= t.text_field :comment_anxiety, placeholder: 'ハンドルネーム' %></p>
-    <p><%=t.submit value: '投稿' %></p>
-<% end %>    
+<%= render 'postform', post: @post %>
 
+<%= link_to 'Back', posts_path>
