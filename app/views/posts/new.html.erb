@@ -1,38 +1,104 @@
-<% @post.each do |post| %> 
-    <%
-=begin%>
-#  <p>
-#         <%
-# =begin%>
-#  <%= post.name %><br> 
-# <%
-# =end%>
-#         <%= image_tag post.image.url %>
-#         <%
-# =begin%>
-#  <%= post.country %><br> 
-# <%
-# =end%>
-#     </p> 
-<%
-=end%>
-<% end %>
 
-<hr>
-<%= form_for :posts, url: 'posts/create' do |t| %>
-    <p><%=t.label "投稿者" %><br><%= t.text_field :name, placeholder: 'ハンドルネーム' %></p>
-    <p><%=t.label "画像をアップロード" %><br><%= t.file_field :image %></p>
+    <div class="form-wrapper">
+      <h1>New Post</h1>
+    <!--投稿フォーム-->
+      <form action="#" method="post">
+        <div class="form-item">
+          <label for="country">国</label>
+          <input type="country" name="country" required="required" placeholder="Canada"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="region">都市</label>
+          <input type="region" name="region" required="required" placeholder="Victoria"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="school">学校</label>
+          <input type="school" name="school" required="required" placeholder="Univercity of Victoria"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="school_address">学校住所</label>
+          <input type="school_address" name="school_address" required="required" placeholder="University of Victoria 3800 Finnerty Road Victoria BC  V8P 5C2 Canada"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="major">専攻</label>
+          <input type="major" name="major" required="required" placeholder="Artificial Intelligence"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="stay">宿泊形態</label>
+          <input type="stay" name="stay" required="required" placeholder="ホームステイ"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="purpose">目的</label>
+          <input type="purpose" name="purpose" required="required" placeholder="英語力を養うため"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="kind">留学種類</label>
+          <input type="kind" name="kind" required="required" placeholder="語学留学"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="term">期間</label>
+          <input type="term" name="term" required="required" placeholder="4weeks"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="flight_plan">飛行機</label>
+          <input type="flight_plan" name="flight_plan" required="required" placeholder="福岡空港"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="budget">予算</label>
+          <input type="budget" name="budget" required="required" placeholder="USD2000"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="language">言語</label>
+          <input type="language" name="language" required="required" placeholder="英語"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="language_level">言語レベル</label>
+          <input type="language_level" name="language_level" required="required" placeholder="TOEIC 600→800"></input>
+        </div>
+
+        <div class="form-item">
+          <label for="comment">コメント</label>
+          <textarea type="comment" name="comment" required="required" placeholder="コメント"></textarea>
+        </div>
+
+        <div class="form-item">
+          <label for="photo">写真・動画</label>
+
+          <input type="file" name="image_file[]" multiple="multiple"></input>
+        </div>
+
+
+
+
+
+        <!--投稿ボタン-->
+        <div class="button-panel">
+          <input type="submit" class="button" title="post" value="投稿する"></input>
+        </div>
+      </form>
+
+<div class="form-wrapper">
+  <h1>New Post</h1>
+  <%= form_with(model: @post, local: true) do |t| %>
      <p><%=t.label "kuni" %><br><%= t.collection_select :country_id, Country.all, :id, :name %>
       <p><%=t.label "stay" %><br><%= t.collection_select :stay_id, Stay.all, :id, :name %></p>
+      <!-- <p><%=t.label "Bookmark" %><br><%= t.text_field :bookmark_id, placeholder: 'ハンドルネーム' %></p> -->
       <p><%=t.label "kind" %><br><%= t.collection_select :kind_id, Kind.all, :id, :name %></p>
-      <%
-=begin%>
- <p><%=t.label "User" %><br><%= t.collection_select :user_id, User.all, :id, :name %></p> 
-<%
-=end%>
+      <!-- <p><%=t.label "Like" %><br><%= t.text_field :like_id, placeholder: 'ハンドルネーム' %></p> -->
       <p><%=t.label "Language" %><br><%= t.collection_select :language_id, Language.all, :id, :name %></p>
-      <p><%=t.label "Bookmark" %><br><%= t.text_field :bookmark_id, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "Like" %><br><%= t.text_field :like_id, placeholder: 'ハンドルネーム' %></p>
+      <p><%=t.label "画像をアップロード" %><br><%= t.file_field :image %></p>
       <p><%=t.label "Region" %><br><%= t.text_field :region, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "school" %><br><%= t.text_field :school, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "school address" %><br><%= t.text_field :school_address, placeholder: 'ハンドルネーム' %></p>
@@ -42,7 +108,7 @@
       <p><%=t.label "flight plan" %><br><%= t.text_field :flight_plan, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "budget" %><br><%= t.text_field :budget, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "language level" %><br><%= t.text_field :language_level, placeholder: 'ハンドルネーム' %></p>
-      <p><%=t.label "c impression" %><br><%= t.text_field :comment_impression, placeholder: 'ハンドルネーム' %></p>
+      <!-- <p><%=t.label "c impression" %><br><%= t.text_field :comment_impression, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "c school" %><br><%= t.text_field :comment_school, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "c food" %><br><%= t.text_field :comment_food, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "c stay" %><br><%= t.text_field :comment_stay, placeholder: 'ハンドルネーム' %></p>
@@ -50,7 +116,7 @@
       <p><%=t.label "c social" %><br><%= t.text_field :comment_social, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "c advice" %><br><%= t.text_field :comment_advice, placeholder: 'ハンドルネーム' %></p>
       <p><%=t.label "c accident" %><br><%= t.text_field :comment_accident, placeholder: 'ハンドルネーム' %></p>
-    <p><%=t.label "c anxiety" %><br><%= t.text_field :comment_anxiety, placeholder: 'ハンドルネーム' %></p>
-    <p><%=t.submit value: '投稿' %></p>
-<% end %>    
-
+      <p><%=t.label "c anxiety" %><br><%= t.text_field :comment_anxiety, placeholder: 'ハンドルネーム' %></p> -->
+      <p><%=t.submit value: '投稿' %></p>
+  <% end %>
+</div>

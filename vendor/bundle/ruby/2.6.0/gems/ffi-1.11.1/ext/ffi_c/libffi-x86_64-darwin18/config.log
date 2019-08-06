@@ -30,14 +30,17 @@ Kernel configured for up to 4 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3
 Primary memory available: 16.00 gigabytes
-Default processor set: 351 tasks, 1473 threads, 4 processors
-Load average: 2.76, Mach factor: 1.73
+Default processor set: 370 tasks, 1654 threads, 4 processors
+Load average: 2.94, Mach factor: 1.36
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
 PATH: /Users/study/.rbenv/versions/2.6.3/bin
 PATH: /usr/local/Cellar/rbenv/1.1.2/libexec
+PATH: /usr/local/opt/mysql@5.7/bin
+PATH: /Users/study/.rbenv/shims
+PATH: /Users/study/.rbenv/bin
 PATH: /Users/study/.rbenv/shims
 PATH: /Users/study/.rbenv/bin
 PATH: /usr/local/bin
