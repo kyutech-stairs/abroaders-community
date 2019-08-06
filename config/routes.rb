@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   resources :posts
  get '/posts/new', to: 'posts#new'
  post '/posts/create', to: 'posts#show'
+
+# get '/users/new', to: 'users#new', as: 'new_user'
+# get '/users/:id', to: 'users#show', as: 'user'
 # #   post '/posts', to: 'posts#show'
 
 # get '/posts', to: 'posts#new'

@@ -36,18 +36,25 @@ class PostsController < ApplicationController
     def search
         @post = Post.search(permit_params[:search])
     end
-end
     private
         def permit_params
-            params.require(:posts).permit(:country_id, :stay_id, :bookmark_id, :kind_id, :user_id, :like, :language_id, :image, :video, :region, :school, :school_address, 
-            :major, :purpose, :term, :flight_plan, :budget, :language_level, :comment_impression,
-            :comment_school, :comment_food, :comment_stay, :comment_manner, :comment_social,
-            :comment_advice, :comment_accident,:comment_anxiety
-            )
+            params.require(:posts).permit(
+                :country_id, 
+                :stay_id, 
+                :kind_id, 
+                :language_id, 
+                :region, 
+                :school, 
+                :school_address, 
+                :major, 
+                :purpose, 
+                :term, 
+                :flight_plan, 
+                :budget, 
+                :language_level, 
+            ).merge(user_id: @current_user.id)
         end
-
-
-
+    end
 
 
 
