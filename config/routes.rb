@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :users, :only => [:index, :show, :create]
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
