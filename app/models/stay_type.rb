@@ -1,0 +1,2 @@
+class StayType < ApplicationRecord
+end
