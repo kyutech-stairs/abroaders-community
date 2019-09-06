@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_042337) do
+ActiveRecord::Schema.define(version: 2019_09_06_133718) do
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -35,13 +35,10 @@ ActiveRecord::Schema.define(version: 2019_09_05_042337) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.bigint "gender_id"
-    t.bigint "country_id"
-    t.bigint "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["country_id"], name: "index_users_on_country_id"
+    t.string "image"
     t.index ["gender_id"], name: "index_users_on_gender_id"
-    t.index ["language_id"], name: "index_users_on_language_id"
   end
 
 end

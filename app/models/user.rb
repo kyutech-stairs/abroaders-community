@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  belongs_to :gender
+  
   # saveする前に、入力されたemailを全て小文字に変換する
   before_save { self.email = email.downcase }
 
