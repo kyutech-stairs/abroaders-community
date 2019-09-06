@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_133718) do
+ActiveRecord::Schema.define(version: 2019_09_06_171429) do
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,30 @@ ActiveRecord::Schema.define(version: 2019_09_06_133718) do
   end
 
   create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "term"
+    t.string "image"
+    t.string "budget"
+    t.text "comment"
+    t.bigint "stay_type_id"
+    t.bigint "country_id"
+    t.bigint "language_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_posts_on_country_id"
+    t.index ["language_id"], name: "index_posts_on_language_id"
+    t.index ["stay_type_id"], name: "index_posts_on_stay_type_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "stay_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

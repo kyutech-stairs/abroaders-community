@@ -1,0 +1,27 @@
+<h1><%= @post.title %></h1>
+<p>by <%= @post.user.name %></p>
+
+<ul>
+  <li>Country: <%= @post.country.name %></li>
+  <li>Language: <%= @post.language.name %></li>
+  <li>Stay type: <%= @post.stay_type.name %></li>
+  <li>Term: <%= @post.term %></li>
+  <li>Budget: <%= @post.budget %></li>
+</ul>
+
+<div>
+  <%= image_tag @post.image.url %>
+</div>
+
+<p>Comment: </p>
+<p><%= @post.comment %></p>
+
+<% if signed_in? && current_user.id == @post.user.id %>
+  <div>
+    <%= link_to "Edit", edit_post_path(@post) %>
+    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
+  </div>
+  <div>
+    <%= link_to  "Back", :back %>
+  </div>
+<% end %>

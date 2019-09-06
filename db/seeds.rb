@@ -19,3 +19,17 @@ end
 CSV.foreach('db/csv/languages.csv') do |l|
   Language.create(name: l[0])
 end
+
+CSV.foreach('db/csv/stay_types.csv') do |s|
+  StayType.create(name: s[0])
+end
+
+CSV.foreach('db/csv/users.csv', headers: true) do |u|
+  User.create(
+    name: u['name'],
+    email: u['email'],
+    gender_id: u['gender_id'],
+    image: open("#{Rails.root}/db/user_images/#{u['image']}"),
+    password: 'password'
+  )
+end

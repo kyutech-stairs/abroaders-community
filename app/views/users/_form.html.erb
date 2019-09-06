@@ -4,37 +4,50 @@
     <%= render 'shared/error_messages', model: f.object %>
 
     <div>
-      <h3><%= f.label :name %>: </h3>
-      <%= f.text_field :name %>
+      <h4>
+        <%= f.label :name %>: 
+        <%= f.text_field :name %>
+      </h4>
     </div>
 
     <div>
-      <h3><%= f.label :email %>: </h3>
-      <%= f.email_field :email %>
+      <h4>
+        <%= f.label :email %>: 
+        <%= f.email_field :email %>
+      </h4>
     </div>
 
     <div>
-      <h3><%= f.label :gender %>: </h3>
-      <%= f.collection_select :gender_id, Gender.all, :id, :name, prompt: "未選択" %>
+      <h4>
+        <%= f.label :gender %>: 
+        <%= f.collection_select :gender_id, Gender.all, :id, :name, prompt: "Not selected" %>
+      </h4>
     </div>
 
     <div>
-      <h3><%= f.label :image %>: </h3>
-      <%= f.file_field :image %>
+      <h4>
+        <%= f.label :image %>: 
+        <%= f.file_field :image %>
+      </h4>
     </div>
 
     <div>
-      <h3><%= f.label :password %>: </h3>
-      <%= f.password_field :password %>
+      <h4>
+        <%= f.label :password %>:
+        <%= f.password_field :password %>
+      </h4>
     </div>
 
     <div>
-      <h3><%= f.label :password_confirmation, "Confirmation" %>: </h3>
-      <%= f.password_field :password_confirmation %>
+      <h4>
+        <%= f.label :password_confirmation, "Confirmation" %>: 
+        <%= f.password_field :password_confirmation %>
+      </h4>
     </div>
 
     <div>
       <%= f.submit yield(:button_text) %>
     </div>
   <% end %>
+  <%= link_to  "Back", :back %>
 </div>

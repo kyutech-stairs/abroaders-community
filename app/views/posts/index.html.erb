@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to post_path(post) do %>
+      <h4><%= post.title %> by <%= post.user.name %></h4>
+    <% end %>
+  </div>
+<% end %>
