@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'posts#index'
+
   get   '/signup', to: 'users#new'
   post  '/signup', to: 'users#create'
 
@@ -8,5 +10,6 @@ Rails.application.routes.draw do
 
   delete '/signout', to: 'sessions#destroy'
 
-  resources :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, except: [:new, :create]
+  resources :posts, except: [:index]
 end

@@ -1,4 +1,8 @@
 <div>
-  <strong>ABBRY</strong>
-  <%= link_to  current_user.name, user_path(current_user) %>
+  <strong><%= link_to "ABRRY", root_url %></strong>
+  <% if signed_in?%>
+    <%= link_to  current_user.name, user_path(current_user) %>
+  <% else%>
+    <%= link_to "Sign up", signup_path %>
+  <% end %>
 </div>
