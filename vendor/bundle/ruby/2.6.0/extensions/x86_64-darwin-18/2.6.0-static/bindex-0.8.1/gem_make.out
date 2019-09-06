@@ -1,0 +1,15 @@
+current directory: /Users/kiyo/workspace/abroaders-community/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/kiyo/.rbenv/versions/2.6.3/bin/ruby -I /Users/kiyo/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190907-46077-107xdh2.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kiyo/workspace/abroaders-community/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/kiyo/workspace/abroaders-community/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/kiyo/workspace/abroaders-community/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190907-46077-159az45/skiptrace/internal

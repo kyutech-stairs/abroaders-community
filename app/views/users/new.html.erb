@@ -1,31 +1,4 @@
 <h1>Sign up</h1>
-<div>
-  <%= form_with model: @user, url: signup_path, local: true do |f| %>
-    <%# エラーメッセージを表示 %>
-    <%= render 'shared/error_messages', model: f.object %>
-
-    <div>
-      <h3><%= f.label :name %></h3>
-      <%= f.text_field :name %>
-    </div>
-
-    <div>
-      <h3><%= f.label :email %></h3>
-      <%= f.email_field :email %>
-    </div>
-
-    <div>
-      <h3><%= f.label :password %></h3>
-      <%= f.password_field :password %>
-    </div>
-
-    <div>
-      <h3><%= f.label :password_confirmation, "Confirmation" %></h3>
-      <%= f.password_field :password_confirmation %>
-    </div>
-
-    <div>
-      <%= f.submit "Create my account" %>
-    </div>
-  <% end %>
-</div>
+<% provide(:button_text, 'Create my account') %>
+<%= render "form", url: signup_path %>
+<p><%= link_to  "Sign in", signin_path %> if you have already signed up</p>

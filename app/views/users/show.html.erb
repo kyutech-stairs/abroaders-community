@@ -1,2 +1,11 @@
+<%= image_tag @user.image.url %>
+
 <h1><%= @user.name %></h1>
-<p><%= @user.email %></p>
+<p>E-mail: <%= @user.email %></p>
+<p>Gender: <%= @user.gender.name %></p>
+
+<% if signed_in? && @current_user.id == @user.id %>
+  <%= link_to  "Edit", edit_user_path(@current_user) %>
+  <%= link_to  "Sign out", signout_path, method: :delete %>
+  <%= link_to  "Delete", @current_user, method: :delete %>
+<% end %>

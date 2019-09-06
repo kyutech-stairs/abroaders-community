@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  belongs_to :gender
+  
   # saveする前に、入力されたemailを全て小文字に変換する
   before_save { self.email = email.downcase }
 
@@ -9,4 +11,7 @@ class User < ApplicationRecord
   validates :email, {presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }}
 
   has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+  mount_uploader :image, UserImageUploader
 end
