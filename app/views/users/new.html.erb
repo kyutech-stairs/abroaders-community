@@ -1,6 +1,9 @@
 <h1>Sign up</h1>
 <div>
-  <%= form_with model: @user, url: users_path do |f| %>
+  <%= form_with model: @user, url: users_path , local: true do |f| %>
+    <%# エラーメッセージを表示 %>
+    <%= render 'shared/error_messages', model: f.object %>
+
     <div>
       <h3><%= f.label :name %></h3>
       <%= f.text_field :name %>
