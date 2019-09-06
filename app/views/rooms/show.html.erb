@@ -1,0 +1,26 @@
+<h1>DM</h1>
+
+<h4>参加者</h4>
+<% @entries.each do |e| %>
+  <h5><strong><%= link_to e.user.name, user_path(e.user) %> さん</strong></h5>
+<% end %>
+
+<hr>
+<% if @messages.present? %>
+  <% @messages.each do |m| %>
+    <strong><%= m.content %></strong>
+    <small>by <strong><%= link_to m.user.name, user_path(m.user) %> さん</strong></small>
+    <hr>
+  <% end %>
+<% else %>
+  <h3>No messages</h3>
+<% end %>
+
+<%= form_with model: @message do |f| %>
+  <%= f.text_field :content, placeholder: "Input your message", size: 70 %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <br>
+  <%= f.submit "Send" %>
+<% end %>
+
+<%= link_to "Back", users_path %>
