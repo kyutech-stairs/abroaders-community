@@ -10,7 +10,12 @@ module SessionsHelper
   end
 
   def signed_in?
-    !current_user.nil?
+    if !current_user.nil?
+      # nothing
+    else
+      flash[:alert] = "Please sign in."
+      redirect_to signin_path
+    end
   end
 
   def sign_out
