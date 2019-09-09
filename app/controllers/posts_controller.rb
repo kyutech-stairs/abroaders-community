@@ -50,6 +50,7 @@ class PostsController < ApplicationController
         :term, 
         :image, 
         :budget, 
+        :school,
         :comment,
         :stay_type_id,
         :country_id,

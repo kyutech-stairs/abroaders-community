@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 20 }
   validates :term, presence: true
   validates :budget, presence: true
-
+  validates :school, presence: true
   mount_uploader :image, PostImageUploader
 end

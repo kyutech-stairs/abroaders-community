@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :term
       t.string :image
       t.string :budget
+      t.string :school
 
       t.text :comment
 

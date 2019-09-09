@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_130848) do
     t.string "term"
     t.string "image"
     t.string "budget"
+    t.string "school"
     t.text "comment"
     t.bigint "stay_type_id"
     t.bigint "country_id"
