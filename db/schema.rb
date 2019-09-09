@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_215846) do
+ActiveRecord::Schema.define(version: 2019_09_09_130848) do
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2019_09_06_215846) do
   end
 
   create_table "genders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kinds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,7 +67,9 @@ ActiveRecord::Schema.define(version: 2019_09_06_215846) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "kind_id"
     t.index ["country_id"], name: "index_posts_on_country_id"
+    t.index ["kind_id"], name: "index_posts_on_kind_id"
     t.index ["language_id"], name: "index_posts_on_language_id"
     t.index ["stay_type_id"], name: "index_posts_on_stay_type_id"
     t.index ["user_id"], name: "index_posts_on_user_id"

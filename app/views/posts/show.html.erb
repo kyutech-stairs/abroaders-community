@@ -5,6 +5,7 @@
   <li>Country: <%= @post.country.name %></li>
   <li>Language: <%= @post.language.name %></li>
   <li>Stay type: <%= @post.stay_type.name %></li>
+  <li>Kind: <%= @post.kind.name %></li>
   <li>Term: <%= @post.term %></li>
   <li>Budget: <%= @post.budget %></li>
 </ul>
@@ -13,8 +14,12 @@
   <%= image_tag @post.image.url %>
 </div>
 
-<p>Comment: </p>
-<p><%= @post.comment %></p>
+ <%
+=begin%>
+ <p>Comment: </p>
+<p><%= @post.comment %></p>  
+<%
+=end%>
 
 <% if current_user && current_user.id == @post.user.id %>
   <div>

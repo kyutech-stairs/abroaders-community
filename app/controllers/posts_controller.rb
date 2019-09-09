@@ -54,7 +54,8 @@ class PostsController < ApplicationController
         :stay_type_id,
         :country_id,
         :language_id,
-        :user_id
+        :user_id,
+        :kind_id
       )
     end
 end

@@ -35,6 +35,13 @@
 
     <div>
       <h4>
+        <%= f.label :kind %>: 
+        <%= f.collection_select :kind_id, Kind.all, :id, :name, prompt: "Not selected" %>
+      </h4>
+    </div>
+
+    <div>
+      <h4>
         <%= f.label :term %>: 
         <%= f.text_field :term %>
       </h4>
@@ -54,12 +61,16 @@
       </h4>
     </div>
 
-    <div>
+    <%
+=begin%>
+ <div>
       <h4>
         <%= f.label :comment %>: 
         <%= f.text_area :comment %>
       </h4>
-    </div>
+    </div> 
+<%
+=end%>
 
     <div>
       <%= f.submit yield(:button_text) %>

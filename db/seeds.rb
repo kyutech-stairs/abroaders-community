@@ -24,6 +24,10 @@ CSV.foreach('db/csv/stay_types.csv') do |s|
   StayType.create(name: s[0])
 end
 
+CSV.foreach('db/csv/kinds.csv') do |k|
+  Kind.create(name: k[0])
+end
+
 CSV.foreach('db/csv/users.csv', headers: true) do |u|
   User.create(
     name: u['name'],
