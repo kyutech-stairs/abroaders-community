@@ -61,7 +61,7 @@
     <div>
       <h4>
         <%= f.label :budget %>: 
-        <%= f.text_field :budget %>
+         <%= f.collection_select :budget_id, Budget.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
 

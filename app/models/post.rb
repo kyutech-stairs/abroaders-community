@@ -5,9 +5,9 @@ class Post < ApplicationRecord
   belongs_to :stay_type
   belongs_to :kind
   belongs_to :term
+  belongs_to :budget
 
   validates :title, presence: true, length: { maximum: 20 }
-  validates :budget, presence: true
   validates :school, presence: true
   validates :school_address, presence: true
   mount_uploader :image, PostImageUploader

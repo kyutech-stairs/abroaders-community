@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
     create_table :posts do |t|
       t.string :name
       t.string :image
-      t.string :budget
       t.string :school
       t.text :school_address
 

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_122116) do
+ActiveRecord::Schema.define(version: 2019_09_10_125622) do
+
+  create_table "budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -58,7 +64,6 @@ ActiveRecord::Schema.define(version: 2019_09_10_122116) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "image"
-    t.string "budget"
     t.string "school"
     t.text "school_address"
     t.text "comment"
@@ -70,6 +75,8 @@ ActiveRecord::Schema.define(version: 2019_09_10_122116) do
     t.datetime "updated_at", null: false
     t.bigint "kind_id"
     t.bigint "term_id"
+    t.bigint "budget_id"
+    t.index ["budget_id"], name: "index_posts_on_budget_id"
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["kind_id"], name: "index_posts_on_kind_id"
     t.index ["language_id"], name: "index_posts_on_language_id"

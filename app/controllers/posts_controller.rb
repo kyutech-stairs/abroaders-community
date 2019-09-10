@@ -48,7 +48,6 @@ class PostsController < ApplicationController
       params.require(:post).permit(
         :title, 
         :image, 
-        :budget, 
         :school,
         :school_address,
         :comment,
@@ -57,7 +56,8 @@ class PostsController < ApplicationController
         :language_id,
         :user_id,
         :kind_id,
-        :term_id
+        :term_id,
+        :budget_id
       )
     end
 end
