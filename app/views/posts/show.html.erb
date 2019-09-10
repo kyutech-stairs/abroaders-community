@@ -11,9 +11,18 @@
   <li>Company or school address: <%= @post.school_address %></li>
   <li>Major: <%= @post.major.name %></li>
   <li>Budget: <%= @post.budget.name %></li>
+  <li>国の感想: <%= @post.comment_country %></li>
+  <li>学校あるいは会社の感想: <%= @post.comment_school %></li>
+  <li>社会の感想: <%= @post.comment_social %></li>
+  <li>自分からのアドバイス: <%= @post.comment_advice %></li>
 </ul>
 
 <div>
+  <%
+=begin%>
+ <%= image_tag @post.image.url %> 
+<%
+=end%>
   <%= image_tag @post.image.url %>
 </div>
 

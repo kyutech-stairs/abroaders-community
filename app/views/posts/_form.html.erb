@@ -74,20 +74,38 @@
     <div>
       <h4>
         <%= f.label :image %>: 
-        <%= f.file_field :image %>
+        <%= f.file_field :image, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
       </h4>
     </div>
 
-    <%
-=begin%>
- <div>
-      <h4>
-        <%= f.label :comment %>: 
-        <%= f.text_area :comment %>
-      </h4>
-    </div> 
-<%
-=end%>
+    <div>
+       <h4>
+         <%= f.label :国の感想 %>: 
+         <%= f.text_area :comment_country %>
+       </h4>
+     </div> 
+
+      <div>
+       <h4>
+         <%= f.label :学校あるいは会社の感想 %>: 
+         <%= f.text_area :comment_school %>
+       </h4>
+     </div> 
+
+      <div>
+       <h4>
+         <%= f.label :社会の感想 %>: 
+         <%= f.text_area :comment_social %>
+       </h4>
+     </div> 
+
+      <div>
+       <h4>
+         <%= f.label :自分からのアドバイス %>: 
+         <%= f.text_area :comment_advice %>
+       </h4>
+     </div> 
+
 
     <div>
       <%= f.submit yield(:button_text) %>

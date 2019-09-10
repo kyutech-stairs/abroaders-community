@@ -11,5 +11,9 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 20 }
   validates :school, presence: true
   validates :school_address, presence: true
+  validates :comment_social, presence: true
+  validates :comment_country, presence: true
+  validates :comment_advice, presence: true
+  validates :comment_school, presence: true
   mount_uploader :image, PostImageUploader
 end
