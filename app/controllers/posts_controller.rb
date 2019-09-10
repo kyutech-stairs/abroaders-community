@@ -47,16 +47,17 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(
         :title, 
-        :term, 
         :image, 
         :budget, 
         :school,
+        :school_address,
         :comment,
         :stay_type_id,
         :country_id,
         :language_id,
         :user_id,
-        :kind_id
+        :kind_id,
+        :term_id
       )
     end
 end

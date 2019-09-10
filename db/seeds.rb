@@ -28,6 +28,10 @@ CSV.foreach('db/csv/kinds.csv') do |k|
   Kind.create(name: k[0])
 end
 
+CSV.foreach('db/csv/terms.csv') do |t|
+  Term.create(name: t[0])
+end
+
 CSV.foreach('db/csv/users.csv', headers: true) do |u|
   User.create(
     name: u['name'],

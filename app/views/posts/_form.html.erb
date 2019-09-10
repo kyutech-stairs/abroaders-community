@@ -43,13 +43,19 @@
     <div>
       <h4>
         <%= f.label :term %>: 
-        <%= f.text_field :term %>
+        <%= f.collection_select :term_id, Term.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
   <div>
       <h4>
-        <%= f.label :school %>: 
+        <%= f.label :school_name %>: 
         <%= f.text_field :school %>
+      </h4>
+    </div>
+    <div>
+      <h4>
+        <%= f.label :school_address %>: 
+        <%= f.text_field :school_address %>
       </h4>
     </div>
     <div>
