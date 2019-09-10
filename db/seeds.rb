@@ -36,6 +36,10 @@ CSV.foreach('db/csv/budgets.csv') do |b|
   Budget.create(name: b[0])
 end
 
+CSV.foreach('db/csv/majors.csv') do |m|
+  Major.create(name: m[0])
+end
+
 CSV.foreach('db/csv/users.csv', headers: true) do |u|
   User.create(
     name: u['name'],

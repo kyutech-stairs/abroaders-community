@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   belongs_to :kind
   belongs_to :term
   belongs_to :budget
+  belongs_to :major
 
   validates :title, presence: true, length: { maximum: 20 }
   validates :school, presence: true

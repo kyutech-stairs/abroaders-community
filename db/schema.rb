@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_125622) do
+ActiveRecord::Schema.define(version: 2019_09_10_133603) do
 
   create_table "budgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -51,6 +51,12 @@ ActiveRecord::Schema.define(version: 2019_09_10_125622) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "majors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "room_id"
@@ -76,10 +82,12 @@ ActiveRecord::Schema.define(version: 2019_09_10_125622) do
     t.bigint "kind_id"
     t.bigint "term_id"
     t.bigint "budget_id"
+    t.bigint "major_id"
     t.index ["budget_id"], name: "index_posts_on_budget_id"
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["kind_id"], name: "index_posts_on_kind_id"
     t.index ["language_id"], name: "index_posts_on_language_id"
+    t.index ["major_id"], name: "index_posts_on_major_id"
     t.index ["stay_type_id"], name: "index_posts_on_stay_type_id"
     t.index ["term_id"], name: "index_posts_on_term_id"
     t.index ["user_id"], name: "index_posts_on_user_id"

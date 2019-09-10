@@ -57,7 +57,8 @@ class PostsController < ApplicationController
         :user_id,
         :kind_id,
         :term_id,
-        :budget_id
+        :budget_id,
+        :major_id
       )
     end
 end

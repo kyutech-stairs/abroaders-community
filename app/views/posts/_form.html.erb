@@ -48,14 +48,20 @@
     </div>
   <div>
       <h4>
-        <%= f.label :school_name %>: 
+        <%= f.label :company_or_school_name %>: 
         <%= f.text_field :school %>
       </h4>
     </div>
     <div>
       <h4>
-        <%= f.label :school_address %>: 
+        <%= f.label :company_or_school_address %>: 
         <%= f.text_field :school_address %>
+      </h4>
+    </div>
+    <div>
+      <h4>
+        <%= f.label :major %>: 
+         <%= f.collection_select :major_id, Major.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
     <div>
