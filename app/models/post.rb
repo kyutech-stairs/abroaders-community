@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   validates :comment_school, presence: true
   mount_uploader :image, PostImageUploader
 
-  def self.search(search)
-    where("name LIKE ? OR country LIKE ?", "%#{search}%", "%#{search}%") 
-  end
+  # def self.search(search)
+  #   where("name LIKE ? OR country LIKE ?", "%#{search}%", "%#{search}%") 
+  # end
 end

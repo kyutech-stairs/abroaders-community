@@ -45,7 +45,17 @@ class PostsController < ApplicationController
     else  
       @parameter = params[:search].downcase  
       @results = User.all.where("lower(name) LIKE :search", search: "%#{@parameter}%") 
-      @users = User.all.order(id: :asc)
+      # @users = User.all.order(id: :asc)
+    end  
+  end 
+
+  def searchbypost
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else  
+      @parameter = params[:search].downcase  
+      @results = Post.all.where("lower(country_id) LIKE :search", search: "%#{@parameter}%") 
+      # @users = User.all.order(id: :asc)
     end  
   end 
 
