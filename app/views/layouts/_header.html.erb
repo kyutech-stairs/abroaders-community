@@ -2,7 +2,7 @@
   <strong><%= link_to "ABRRY", root_url %></strong>
   <% if current_user %>
     <%= link_to  'My page', user_path(current_user) %>
-  <% else%>
+  <% else %>
     <%= link_to "Sign up", signup_path %>
   <% end %>
   <%= link_to  "All Users", users_path %>
