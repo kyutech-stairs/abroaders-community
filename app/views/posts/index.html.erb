@@ -1,16 +1,3 @@
-<% @posts.each do |post| %>
-
-
-
-  <div>
-    <%= link_to post_path(post) do %>
-      <h4><%= post.title %> by <%= post.user.name %></h4>
-    <% end %>
-  </div>
-<% end %>
-
-
-
      <div class="slideshow-container">
 
      <div class="mySlides fade">
@@ -27,7 +14,7 @@
 
      <div class="mySlides fade">
        <div class="numbertext">3 / 3</div>
-       <img src="ayaka1.jpg" style="width:100%">
+       <img src="image_tag @post.image.url" style="width:100%">
        <div class="text">Caption Three</div>
      </div>
 
@@ -66,39 +53,24 @@
 
   <center>
     <p><span class="title"> New post </span></p>
-
   </center>
 
-<% @posts.each do |post| %>
-  <main class= container>
-    <div class="view view-first">
-        <img src="ayaka4.jpg" />
-        <div class="mask">
-          <h2><%= post.title %></h2>
-          <p id="name"><%= post.user.name %></p>
-          <p id="during"><%= post.term.name %></p>
-        </div>
-    </div>
 
-    <div class="view view-first">
-        <img src="saku7.jpg" />
-        <div class="mask">
-          <h2><%= post.title %></h2>
-          <p id="name"><%= post.user.name %></p>
-          <p id="during"><%= post.term.name %></p>
-        </div>
-    </div>
-
-    <div class="view view-first">
-        <img src="ryoya3.jpg" />
-        <div class="mask">
-          <h2><%= post.title %></h2>
-          <p id="name"><%= post.user.name %></p>
-          <p id="during"><%= post.term.name %></p>
-        </div>
-    </div>
-  </main>
-<% end %>
+  <!--NewPostの表示ここから-->
+  <% @posts.first(6).each do |post| %>
+    <main class= container>
+      <div class="view view-first">
+          <img src= "image_tag post.image.url" >
+          <%= image_tag post.image_url %>
+          <div class="mask">
+            <h2><%= post.title %></h2>
+            <p id="name"><%= post.user.name %></p>
+            <p id="during"><%= post.term.name %></p>
+          </div>
+      </div>
+    </main>
+  <% end %>
+  <!--NewPostの表示ここまで-->
 
   <script src="dist/js/swiper.js"></script>
   <script>

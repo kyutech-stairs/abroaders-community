@@ -18,20 +18,20 @@
 </ul>
 
 <div>
-  <%
-=begin%>
- <%= image_tag @post.image.url %> 
-<%
-=end%>
-  <%= image_tag @post.image.url %>
+  <%begin%>
+    <%= image_tag @post.image.url %> 
+  <%rescue%>
+    
+  <%end%>
 </div>
 
- <%
-=begin%>
- <p>Comment: </p>
-<p><%= @post.comment %></p>  
-<%
-=end%>
+
+  <%begin%>
+    <p>Comment: </p>
+    <p><%= @post.comment %></p> 
+  <%rescue%>
+    NoComment 
+  <%end%>
 
 <% if current_user && current_user.id == @post.user.id %>
   <div>
