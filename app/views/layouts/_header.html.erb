@@ -27,5 +27,11 @@
     </div>  
   </div> 
 
+ <%
+=begin%>
+ <%= select_tag :food_selection, options_for_select([['Search for food', 'foods'], ['Search your food', 'user_foods']]) %> 
+<%
+=end%>
+
 <% end %>
 </div>
