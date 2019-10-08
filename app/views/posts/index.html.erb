@@ -1,55 +1,42 @@
-     <div class="slideshow-container">
 
-     <div class="mySlides fade">
-       <div class="numbertext">1 / 3</div>
-       <img src="ayaka1.jpg" style="width:100%">
-       <div class="text">Caption Text</div>
-     </div>
+<!--スライダーここから-->
+<div class="slideshow-container">
+  <% @posts.first(6).each do |post| %>
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 6</div>
+      <%= image_tag post.image_url %>
+      <!--<img src="ayaka1.jpg" style="width:100%">-->
+    </div>
+  <%end%>
 
-     <div class="mySlides fade">
-       <div class="numbertext">2 / 3</div>
-       <img src="ayaka4.jpg" style="width:100%">
-       <div class="text">Caption Two</div>
-     </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-     <div class="mySlides fade">
-       <div class="numbertext">3 / 3</div>
-       <img src="image_tag @post.image.url" style="width:100%">
-       <div class="text">Caption Three</div>
-     </div>
+</div>
+  <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
 
-     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-     <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <script>
+      var slideIndex = 0;
+      showSlides();
 
-     </div>
-     <br>
-
-     <div style="text-align:center">
-       <span class="dot" onclick="currentSlide(1)"></span>
-       <span class="dot" onclick="currentSlide(2)"></span>
-       <span class="dot" onclick="currentSlide(3)"></span>
-     </div>
-
-     <script>
-     var slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-  slides[i].style.display = "none";
-  }
-
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
-  }
-     </script>
-
-  
-<!--スライダーヌリンのやつここまで-->
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 2 seconds
+      }
+    </script>
+<!--スライダーここまで-->
 
   <center>
     <p><span class="title"> New post </span></p>
@@ -60,7 +47,7 @@
   <% @posts.first(6).each do |post| %>
     <main class= container>
       <div class="view view-first">
-          <img src= "image_tag post.image.url" >
+          <!--<img src= "image_tag post.image.url" >-->
           <%= image_tag post.image_url %>
           <div class="mask">
             <h2><%= post.title %></h2>
