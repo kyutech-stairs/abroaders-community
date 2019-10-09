@@ -1,44 +1,56 @@
-<h1><%= @post.title %></h1>
-<p>by <%= @post.user.name %></p>
 
-<ul>
-  <li>Country: <%= @post.country.name %></li>
-  <li>Language: <%= @post.language.name %></li>
-  <li>Stay type: <%= @post.stay_type.name %></li>
-  <li>Kind: <%= @post.kind.name %></li>
-  <li>Term: <%= @post.term.name %></li>
-  <li>Company or school name: <%= @post.school %></li>
-  <li>Company or school address: <%= @post.school_address %></li>
-  <li>Major: <%= @post.major.name %></li>
-  <li>Budget: <%= @post.budget.name %></li>
-  <li>国の感想: <%= @post.comment_country %></li>
-  <li>学校あるいは会社の感想: <%= @post.comment_school %></li>
-  <li>社会の感想: <%= @post.comment_social %></li>
-  <li>自分からのアドバイス: <%= @post.comment_advice %></li>
-</ul>
+<html>
+  <head>
+    <<meta charset="utf-8">>
+    <title>ABRRY</title>
+    <link rel="stylesheet" href="postpage.css">
+  </head>
 
-<div>
-  <%begin%>
-    <%= image_tag @post.image.url %> 
-  <%rescue%>
-    
-  <%end%>
-</div>
+  <body>
 
 
-  <%begin%>
-    <p>Comment: </p>
-    <p><%= @post.comment %></p> 
-  <%rescue%>
-    NoComment 
-  <%end%>
+    <div>
+      <%begin%>
+        <%= image_tag @post.image.url %> 
+      <%rescue%>  
+      <%end%>
+    </div>
 
-<% if current_user && current_user.id == @post.user.id %>
-  <div>
-    <%= link_to "Edit", edit_post_path(@post) %>
-    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
-  </div>
-  <div>
-    <%= link_to  "Back", :back %>
-  </div>
-<% end %>
+    <h1><%= @post.title %></h1>
+    <p>by <%= @post.user.name %></p>
+
+    <ul>
+      <li><div class = "subtitle">国</div> <%= @post.country.name %></li>
+      <li><div class = "subtitle">種類</div> <%= @post.kind.name %></li>
+      <li><div class = "subtitle">期間</div> <%= @post.term.name %></li>
+      <li><div class = "subtitle">宿泊形態</div> <%= @post.stay_type.name %></li>
+      <li><div class = "subtitle">学校名</div> <%= @post.school %></li>
+      <li><div class = "subtitle">学校住所</div> <%= @post.school_address %></li>
+      <li><div class = "subtitle">専攻</div> <%= @post.major.name %></li>
+      <li><div class = "subtitle">言語</div> <%= @post.language.name %></li>
+      <li><div class = "subtitle">予算</div> <%= @post.budget.name %></li>
+      <li><div class = "subtitle">国の感想</div> <%= @post.comment_country %></li>
+      <li><div class = "subtitle">学校あるいは会社の感想</div> <%= @post.comment_school %></li>
+      <li><div class = "subtitle">社会の感想</div> <%= @post.comment_social %></li>
+      <li><div class = "subtitle">自分からのアドバイス</div> <%= @post.comment_advice %></li>
+    </ul>
+
+      <%begin%>
+        <p><div class = "subtitle">Comment</div> </p>
+        <p><%= @post.comment %></p> 
+      <%rescue%>
+        NoComment 
+      <%end%>
+
+    <% if current_user && current_user.id == @post.user.id %>
+      <div>
+        <%= link_to "Edit", edit_post_path(@post) %>
+        <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
+      </div>
+      <div>
+        <%= link_to  "Back", :back %>
+      </div>
+    <% end %>
+  </body>
+
+</html>
