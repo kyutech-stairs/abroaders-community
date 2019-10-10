@@ -1,314 +1,33 @@
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+img{
+    padding: 0px 225px;
 }
 
-
-
-body {
-    line-height:1;
+.posttitle{
+    font-family: Didot;
+    color: #000;
+    float: left;
+    font-size: 80px;
+    margin-left: 250px;
+    margin-top:0px;
+    border-bottom: 3px solid #B33E5C;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
+.author{
+    padding-right: 250px;
+    float: right;
+    font-size: 50px;
+    margin-top: 80px;
+    margin-bottom:10px;
 }
 
-nav ul {
-    list-style:none;
-}
+li{
+    font-family: Didot;
+    list-style: none;
+    font-size: 35px;
+    float: left;
+    padding-top: 250px;
 
-blockquote, q {
-    quotes:none;
 }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
-}
-
-a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-}
-
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
-}
-
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
-}
-
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
-/* change border colour to suit your needs */
-hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
-}
-
-input, select {
-    vertical-align:middle;
-}
-
-body{
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Verdana, sans-serif;
-}
-/**********************************************/
-/********Search、Signin、Signupのとこ**********/
-/**********************************************/
-#nav {
-  margin-top: 2%;
-  width: 100%;
-  text-align: center;
-}
-#nav ul{
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  /*width: 100%;*/
-}
-#nav li {
-  display: inline-block;
-  width: 15%;
-  margin: 0 20px;
-}
-#nav a {
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-
-  font-family: Didot;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 51px;
-}
-
-/**********************************************/
-/*投稿記事のタイトルとユーザー名の表示について*/
-/**********************************************/
-#tt {
-  margin-top: 2%;
-  width: 100%;
-  text-align: center;
-}
-#tt ul{
-/*  display: inline-block;*/
-  width: 100%;
-  text-align: center;
-  /*width: 100%;*/
-}
-/*
-#tt li {
-  display: inline-block;
-  width: 15%;
-  margin: 0 20px;
-}
-*/
-#tt .title {
-  display: inline-block;
-  border-bottom: solid 3px #DB7093;
-  text-decoration: none;
-  color: #000000;
-  font-weight: normal;
-  font-family: Didot;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 63px;
-}
-/*Written by ・・・のとこ*/
-#tt .name{
-  display: inline-block;
-  text-decoration: none;
-  font-weight: normal;
-  font-family: Didot;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 35px;
-  line-height: 51px;
-}
-
-
-/**********************************************/
-/**********内容のタイトルとかのとこ************/
-/**********************************************/
-/*1行目の国名・都市、種類*/
-#subtitle{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#subtitle{
-  font-family: Didot;
-  font-style: normal;
-  font-weight: normal;
-  background-color: #fcc;
-  width: 1000px;
-  /*margin-left: 140px;*/
-/*  margin-right: 50px;*/
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#subtitle{
-  background-color: #cc9;
-  width: 500px;
-  float: left;
-  padding: 5px;
-}
-#detail .postleft h2{
-  font-size: 25px;
-  display: inline;
-}
-#detail .postleft p{
-  font-size: 20px;
-  display: inline;
-}
-
-#detail .postright{
-  background-color: #9cc;
-  width: 500px;
-  float: right;
-  padding: 5px;
-}
-#detail .postright h2{
-  font-size: 25px;
-  display: inline;
-}
-#detail .postright p{
-  font-size: 20px;
-  display: inline;
-}
-
-#detail .post{
-  background-color: #aa9;
-  width: 1000px;
-  float: left;
-  padding: 5px;
-}
-#detail .post h2{
-  font-size: 25px;
-  display: inline;
-}
-#detail .post p{
-  font-size: 20px;
-  display: inline;
-}
-
-#detail .plane{
-  background-color: #aa9;
-  width: 1000px;
-  float: left;
-  padding: 5px;
-}
-#detail .plane h2{
-  font-size: 25px;
-  display: inline;
-  /*float: left;*/
-  /*background-color: red;*/
-}
-#detail .plane .p1{
-  /*background-color: #aa0;*/
-  width: 1000px;
-  float: left;
-  font-size: 20px;
-  display: inline;
-  padding: 5px;
-  padding-top: 10px;
-}
-#detail .plane .p2{
-  /*background-color: #bb3;*/
-  width: 1000px;
-  float: left;
-  font-size: 20px;
-  display: inline;
-  padding: 5px;
-}
-
-
-#detail .clearfix:after{
-  display: block;
-  clear: both;
-  content: "";
-}
-
-
-
-
-
-
-
-
-/**********************************************/
-/*****一番下のコピーライトみたいなとこ*********/
-/**********************************************/
-
-/*presented by Amiiのとこ*/
-span.Amii {
-  font-weight: normal;
-  font-family: Didot;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-}
-
-span.A {
-  font-size: 150%;
-  color: #DB7093;
+.subtitle{
+    float: left;
 }

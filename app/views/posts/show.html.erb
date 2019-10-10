@@ -9,15 +9,15 @@
   <body>
 
 
-    <div>
+    <div class = "img">
       <%begin%>
         <%= image_tag @post.image.url %> 
       <%rescue%>  
       <%end%>
     </div>
 
-    <h1><%= @post.title %></h1>
-    <p>by <%= @post.user.name %></p>
+    <p class ="posttitle"><%= @post.title %></p>
+    <p class = "author">by <%= @post.user.name %></p>
 
     <ul>
       <li><div class = "subtitle">国</div> <%= @post.country.name %></li>
