@@ -112,24 +112,77 @@ select option:hover {
     color: #DB7093;
 } 
 
-.image_field{
+/* .design{
     text-align: center;
+    width: 500px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Didot;
+    background: #C4C4C4;
+    outline: none;
+    border-radius:1px;
+    line-height: 50px;  
+    display: inline;
+   
+} */
 
-    /* display:none;
-    background:rgba(255,255,255,0.2);
-    border-radius:3px;
-    padding:3px;
-    color:#ffffff; */
+.label-box__inner {
+    /* padding: 30px; */
 }
+
+.image_field {
+    /* width: 500px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Didot;
+    background: #C4C4C4;
+    outline: none;
+    border-radius:1px;
+    line-height: 50px;  
+    text-align: center;
+    cursor: pointer;
+    margin: 0; */
+    text-align: center;
+}
+
+.boxFileSelect {
+    /* width: 100%; */
+    height: 40px;
+    margin: auto;
+    padding: 10px 16px 8px;
+    border-radius:4px;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+    line-height: 1.5;
+    cursor: pointer;
+    outline-width: 2px;
+
+    /* width: 500px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Didot;
+    background: #C4C4C4;
+    outline: none;
+    border-radius:1px;
+    line-height: 50px;  
+    text-align: center;
+    cursor: pointer; */
+  }
+
+.input-default {
+    display: none;
+    /* display: inline; */
+}
+
 
 label[for="image"]{
     font-family: Didot;
     font-size: 30px;
-    padding: 1em 15em 2em;
+    padding: 1em 14em 2em;
     color: #000000;
 }
 
-input[type="file"]{
+.image input[type="file"]{
 
     /* display: none; */
 
@@ -141,13 +194,6 @@ input[type="file"]{
     outline: none;
     border-radius:1px;
     line-height: 50px;  
-
-
-    
-    /* outline: none;
-    box-shadow: 0 0 5px 1px #C4C4C4;  */
-   
-
 }
 
 input[type="file"]:hover{
@@ -163,9 +209,10 @@ input[type="image"]:focus{
     box-shadow: 0 0 5px 1px #C4C4C4; */
     font-size: 20px;
     font-family: Didot;
+}
 
-
-
+.button{
+    display: none;
 }
 
 .password{
@@ -234,6 +281,4 @@ hr{
     width: 60%;
     border: none;
 }
-
-
 

@@ -1,6 +1,7 @@
 <h1><%= @post.title %></h1>
 <p>by <%= @post.user.name %></p>
 
+
 <ul>
   <li>Country: <%= @post.country.name %></li>
   <li>Language: <%= @post.language.name %></li>
@@ -16,6 +17,7 @@
   <li>社会の感想: <%= @post.comment_social %></li>
   <li>自分からのアドバイス: <%= @post.comment_advice %></li>
 </ul>
+</div>
 
 <div>
   <%

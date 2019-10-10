@@ -38,11 +38,12 @@
         </div>
     </div>
 
-    <div class="image">
-        <label for="image"><%= f.label :image %></label><br>
-        <div class="image_field">
-          <%= f.file_field :image %>
-        </div>
+    <div class="label-box__inner">
+      <label for="image"><%= f.label :image %></label><br>
+      <div class="image_field">
+        <%= f.file_field :image, class: "input-default" %>
+        <div class="boxFileSelect"></div>
+      </div>
     </div>
 
     <div class="password">
