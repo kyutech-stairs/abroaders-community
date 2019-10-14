@@ -5,11 +5,6 @@
     text-align: center;
 }
 
-
-
-
-
-
 .waku{
     text-align: center;
     padding: 1em 30em 3em;
@@ -86,7 +81,8 @@
     /* margin: 10px 0; */
     margin: 10px -600px 10px 10px;
   }
-  .mycomment p {
+
+  .mymessage > p {
     display: inline-block;
     position: relative; 
     margin: 10px 0;
@@ -114,4 +110,3 @@
   .send{
       margin: 10px 10px 10px -390px;
   }
-
