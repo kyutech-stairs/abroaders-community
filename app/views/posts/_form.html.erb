@@ -5,106 +5,112 @@
 
     <%= f.hidden_field :user_id, value: current_user.id %>
 
-    <div>
-      <h4>
-        <%= f.label :title %>: 
-        <%= f.text_field :title %>
-      </h4>
+    <div class="email">
+      <label for="title">
+        <%= f.label :タイトル %> : </label><br>
+        <div class="email_f">
+        <%= f.email_field :title %></div>
     </div>
 
+
     <div>
-      <h4>
-        <%= f.label :country %>: 
+      <div class="email">
+        <label for="email"><%= f.label :国 %>: </label><br></div>
         <%= f.collection_select :country_id, Country.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+     
     </div>
 
     <div>
       <h4>
-        <%= f.label :language %>: 
+        <%= f.label :言語 %>: 
         <%= f.collection_select :language_id, Language.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
 
     <div>
       <h4>
-        <%= f.label :stay_type %>: 
+        <%= f.label :宿泊形態 %>: 
         <%= f.collection_select :stay_type_id, StayType.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
 
     <div>
       <h4>
-        <%= f.label :kind %>: 
+        <%= f.label :留学種類 %>: 
         <%= f.collection_select :kind_id, Kind.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
 
     <div>
       <h4>
-        <%= f.label :term %>: 
+        <%= f.label :期間 %>: 
         <%= f.collection_select :term_id, Term.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
-  <div>
-      <h4>
-        <%= f.label :company_or_school_name %>: 
-        <%= f.text_field :school %>
-      </h4>
+ 
+ <div class="email">
+      <label for="email"><%= f.label :学校あるいは会社の名 %>:</label><br>
+      <div class="email_f">
+      <%= f.email_field :school %>
+      </div>
     </div>
+
+ <div class="email">
+      <label for="email"><%= f.label :学校あるいは会社の住所 %>:</label><br>
+      <div class="email_f">
+      <%= f.email_field :school_address %>
+      </div>
+    </div>
+
+  
     <div>
       <h4>
-        <%= f.label :company_or_school_address %>: 
-        <%= f.text_field :school_address %>
-      </h4>
-    </div>
-    <div>
-      <h4>
-        <%= f.label :major %>: 
+        <%= f.label :専攻 %>: 
          <%= f.collection_select :major_id, Major.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
     <div>
       <h4>
-        <%= f.label :budget %>: 
+        <%= f.label :予算 %>: 
          <%= f.collection_select :budget_id, Budget.all, :id, :name, prompt: "Not selected" %>
       </h4>
     </div>
 
     <div>
       <h4>
-        <%= f.label :image %>: 
+        <%= f.label :写真 %>: 
         <%= f.file_field :image, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
       </h4>
     </div>
 
-    <div>
-       <h4>
-         <%= f.label :国の感想 %>: 
-         <%= f.text_area :comment_country %>
-       </h4>
-     </div> 
 
-      <div>
-       <h4>
-         <%= f.label :学校あるいは会社の感想 %>: 
-         <%= f.text_area :comment_school %>
-       </h4>
-     </div> 
+ <div class="email">
+      <label for="email"><%= f.label :国の感想 %>:</label><br>
+      <div class="email_f">
+      <%= f.email_field :comment_country %>
+      </div>
+    </div>
 
-      <div>
-       <h4>
-         <%= f.label :社会の感想 %>: 
-         <%= f.text_area :comment_social %>
-       </h4>
-     </div> 
+    <div class="email">
+      <label for="email"><%= f.label :学校あるいは会社の感想%>:</label><br>
+      <div class="email_f">
+      <%= f.email_field :comment_school %>
+      </div>
+    </div>
+   
+  <div class="email">
+      <label for="email"><%= f.label :社会の感想%>:</label><br>
+      <div class="email_f">
+      <%= f.email_field :comment_social %>
+      </div>
+    </div>
 
-      <div>
-       <h4>
-         <%= f.label :自分からのアドバイス %>: 
-         <%= f.text_area :comment_advice %>
-       </h4>
-     </div> 
+ <div class="email">
+      <label for="email"><%= f.label :自分からのアドバイス%>:</label><br>
+      <div class="email_f">
+      <%= f.email_field :comment_advice %>
+      </div>
+    </div>
 
 
     <div>
