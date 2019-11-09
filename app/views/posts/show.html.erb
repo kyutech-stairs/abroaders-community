@@ -1,10 +1,38 @@
 <h1><%= @post.title %></h1>
 <p>by <%= @post.user.name %></p>
 
+<%
+=begin%>
+ <div class="email">
+      <label for="email"><%= f.label :学校あるいは会社の感想%>:</label><br>
+      <div class="email_f">
+      <%= f.text_field :comment_school %>
+      </div>
+    </div> 
+<%
+=end%>
+
 <div class="object">
 <ul class="item_newpost">
-  <li>Country: <%= @post.country.name %></li>
-  <li>Language: <%= @post.language.name %></li>
+  <div class="email"><label for="email"><div class="email_f">Country: <%= @post.country.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Language: <%= @post.language.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Stay Type: <%= @post.stay_type.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Kind: <%= @post.kind.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Term: <%= @post.term.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Company or school name: <%= @post.school%> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Company or school address: <%= @post.school_address %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Major: <%= @post.major.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">Budget: <%= @post.budget.name %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">国の感想: <%= @post.comment_country %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">学校あるいは会社の感想: <%= @post.comment_school %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">社会の感想: <%= @post.comment_social %> </div></label></div>
+  <div class="email"><label for="email"><div class="email_f">自分からのアドバイス: <%= @post.comment_advice %> </div></label></div>
+
+  
+  
+  <%
+=begin%>
+ <li>Language: <%= @post.language.name %></li>
   <li>Stay type: <%= @post.stay_type.name %></li>
   <li>Kind: <%= @post.kind.name %></li>
   <li>Term: <%= @post.term.name %></li>
@@ -15,7 +43,9 @@
   <li>国の感想: <%= @post.comment_country %></li>
   <li>学校あるいは会社の感想: <%= @post.comment_school %></li>
   <li>社会の感想: <%= @post.comment_social %></li>
-  <li>自分からのアドバイス: <%= @post.comment_advice %></li>
+  <li>自分からのアドバイス: <%= @post.comment_advice %></li> 
+<%
+=end%>
 </ul>
 </div>
 
