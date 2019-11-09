@@ -3,47 +3,72 @@
     <%# エラーメッセージを表示 %>
     <%= render 'shared/error_messages', model: f.object %>
 
-    <div>
-      <h4>
-        <%= f.label :name %>: 
+    <!--<div class="name">
+        <label for="name"><%= f.label :name %></label><br>
+        <div class="name_field"> 
+          <%= f.text_field :name %>
+        </div>
+    </div>-->
+
+    <div class="name">
+      <label for="name"><%= f.label :name %></label><br>
+      <div class="name_field">
         <%= f.text_field :name %>
-      </h4>
+      </div>
     </div>
 
-    <div>
+    <div class="email">
+      <label for="email"><%= f.label :email %></label><br>
+      <div class="email_field">
+        <%= f.email_field :email %>
+      </div>
+    </div>
+
+    <!--<div>
       <h4>
         <%= f.label :email %>: 
         <%= f.email_field :email %>
       </h4>
+    </div>-->
+
+    <div class="gender">
+        <label for="gender"><%= f.label :gender %></label><br>
+        <div class="gender_select"> 
+          <%= f.collection_select :gender_id, Gender.all, :id, :name, prompt: "Not selected" %>
+        </div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :gender %>: 
-        <%= f.collection_select :gender_id, Gender.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+    <!--<div class="label-box__inner">
+      <label for="image"><%= f.label :image %></label><br>
+      <div class="image_field">
+        <%= f.file_field :image, class: "input-default" %>
+        <div class="boxFileSelect"></div>
+      </div>
+    </div>-->
+
+    <div class="image">
+      <label for="image" class="image_input">Image</label>
+      <div class="image_field">
+        <%= f.label :image %>
+        <%= f.file_field :image, class: "input_default" %>
+      </div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :image %>: 
-        <%= f.file_field :image %>
-      </h4>
+    <div class="password">
+        <label for="password"><%= f.label :password %></label><br>
+        <div class="password_field">
+          <%= f.password_field :password %>
+        </div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :password %>:
-        <%= f.password_field :password %>
-      </h4>
+    <div class="confirmation">
+        <label for="confirmation"><%= f.label :password_confirmation, "Confirmation" %></label><br>
+        <div class="confirmation_field"> 
+          <%= f.password_field :password_confirmation %>
+        </div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :password_confirmation, "Confirmation" %>: 
-        <%= f.password_field :password_confirmation %>
-      </h4>
-    </div>
+    <hr>
 
     <div>
       <%= f.submit yield(:button_text) %>

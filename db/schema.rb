@@ -69,13 +69,10 @@ ActiveRecord::Schema.define(version: 2019_09_10_133603) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
+    t.string "term"
     t.string "image"
-    t.string "school"
-    t.text "school_address"
-    t.text "comment_advice"
-    t.text "comment_country"
-    t.text "comment_school"
-    t.text "comment_social"
+    t.string "budget"
+    t.text "comment"
     t.bigint "stay_type_id"
     t.bigint "country_id"
     t.bigint "language_id"
@@ -97,6 +94,12 @@ ActiveRecord::Schema.define(version: 2019_09_10_133603) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sexes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

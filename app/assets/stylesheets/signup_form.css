@@ -1,0 +1,235 @@
+.name{
+    padding: 30px;
+}
+
+.name_field{
+    text-align: center;
+}
+
+label[for="name"]{
+    font-family: Didot;
+    font-size: 30px;
+    padding: 1em 14em 2em;
+}
+
+input[type="text"]{
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Didot;
+    background: #C4C4C4;
+}
+
+input[type="text"]:focus{
+    border: 1px solid #C4C4C4;
+	outline: none;
+    box-shadow: 0 0 5px 1px #C4C4C4;
+    font-size: 20px;
+    font-family: Didot;
+}
+
+.email{
+    padding: 30px;
+}
+
+.email_field{
+    text-align: center;
+}
+
+label[for="email"]{
+    font-family: Didot;
+    font-size: 30px;
+    padding: 1em 14em 2em;
+}
+
+input[type="email"]{
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Didot;
+    background: #C4C4C4;
+}
+
+input[type="email"]:focus{
+    border: 1px solid #C4C4C4;
+	outline: none;
+    box-shadow: 0 0 5px 1px #C4C4C4;
+    font-size: 20px;
+    font-family: Didot;
+}
+
+.gender{
+    padding: 30px;
+}
+
+.gender_select{
+    text-align: center;
+}
+
+label[for="gender"]{
+    font-family: Didot;
+    font-size: 30px;
+    padding: 1em 14em 2em;
+}
+
+select {
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    color: gray;
+    width: 500px;
+    /* padding: 15px; */
+    height: 50px;
+    cursor: pointer;
+    background: url(http://sharpik.com/wip/cuteselect/arrow.png) 295px 12px no-repeat white;
+    font-family: Didot;
+    font-size: 20px;
+    padding: 5px 0 10px;
+    outline: none;
+}
+
+select:hover {
+    background-color: transparent;
+    color: #DB7093;
+    padding: 15px 5px 15px 25px;
+    font-family: Didot;
+    box-shadow: 0 0 5px 1px #C4C4C4;
+    outline: none;
+}
+
+select option {
+    background-color: white;
+    color: gray;
+    width: 310px;
+    padding: 10px 15px;
+    height: 20px;
+    cursor: pointer;
+
+}
+
+select option:hover {
+    padding-left: 25px;
+    width: 270px;
+    color: #DB7093;
+} 
+
+.image_input {
+    height: 0px;
+    padding: 0 auto;
+    display: block;
+}
+
+.image_field {
+    width: 500px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Didot;
+    background: #C4C4C4;
+    border-radius: 1px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.input_default {
+    display: none;
+}
+
+.image_field > label {
+    display: block;
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+label[for="image"]{
+    font-family: Didot;
+    font-size: 30px;
+    padding: 0em 15em 1.5em;
+    color: #000000;
+}
+
+/* input[type="file"]:hover{
+    outline: none;
+    box-shadow: 0px 0px 5px 1px #C4C4C4; 
+} */
+
+input[type="image"]:focus{
+    /* border: 1px solid #C4C4C4;
+	outline: none;
+    box-shadow: 0 0 5px 1px #C4C4C4; */
+    font-size: 20px;
+    font-family: Didot;
+}
+
+.button{
+    display: none;
+}
+
+.password{
+    padding: 30px;
+}
+
+.password_field{
+    text-align: center;
+}
+
+label[for="password"]{
+    font-family: Didot;
+    font-size: 30px;
+    padding: 1em 14em 2em;
+}
+
+input[type="password"]{
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Didot;
+    background: #C4C4C4;
+}
+
+input[type="password"]:focus{
+    border: 1px solid #C4C4C4;
+	outline: none;
+    box-shadow: 0 0 5px 1px #C4C4C4;
+    font-size: 20px;
+    font-family: Didot;
+}
+
+.confirmation{
+    padding: 30px;
+}
+
+.confirmation_field{
+    text-align: center;
+}
+
+label[for="confirmation"]{
+    font-family: Didot;
+    font-size: 30px;
+    padding: 1em 14em 2em;
+}
+
+input[type="confirmation"]{
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Didot;
+    background: #C4C4C4;
+}
+
+input[type="confirmation"]:focus{
+    border: 1px solid #C4C4C4;
+	outline: none;
+    box-shadow: 0 0 5px 1px #C4C4C4;
+    font-size: 20px;
+    font-family: Didot;
+}
+
+hr{
+    height: 1px;
+    background-color: #000000;
+    width: 60%;
+    border: none;
+}
+
