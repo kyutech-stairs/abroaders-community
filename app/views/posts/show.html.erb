@@ -1,76 +1,64 @@
-<h1><%= @post.title %></h1>
-<p>by <%= @post.user.name %></p>
 
-<%
-=begin%>
- <div class="email">
-      <label for="email"><%= f.label :学校あるいは会社の感想%>:</label><br>
-      <div class="email_f">
-      <%= f.text_field :comment_school %>
+
+<html>
+  <head>
+    <<meta charset="utf-8">>
+    <title>ABRRY</title>
+    <link rel="stylesheet" href="postpage.css">
+  </head>
+
+
+
+  <body>
+
+
+    <div class="show-img">
+      <%begin%>
+        <%= image_tag @post.image.url %> 
+      <%rescue%>  
+      <%end%>
+    </div>
+    <div class = "content-title">
+      <p class ="posttitle"><%= @post.title %></p>
+      <p class = "author">by <%= @post.user.name %></p>
+    </div>
+
+    <ul id="ul_list">
+      <li class = "a1"><div class = "subtitle">国</div><div class = "main"><%= @post.country.name %></div></li>
+      <li class = "a2"><div class = "subtitle">種類</div> <div class = "main"><%= @post.kind.name %></div></li>
+      <li class = "a1"><div class = "subtitle">期間</div> <div class = "main"><%= @post.term.name %></div></li>
+      <li class = "a2"><div class = "subtitle">宿泊形態</div> <div class = "main"><%= @post.stay_type.name %></div></li>
+      <li class = "a1"><div class = "subtitle">学校名</div> <div class = "main"><%= @post.school %></div></li>
+      <li class = "a1"><div class = "subtitle">学校住所</div> <div class = "main"><%= @post.school_address %></div></li>
+      <li class = "a1"><div class = "subtitle">専攻</div> <div class = "main"><%= @post.major.name %></div></li>
+      <li class = "a2"><div class = "subtitle">言語</div> <div class = "main"><%= @post.language.name %></div></li>
+      <li class = "a2"><div class = "subtitle">予算</div> <div class = "main"><%= @post.budget.name %></div></li>
+      <li class = "a1"><div class = "subtitle">国の感想</div> <div class = "main"><%= @post.comment_country %></div></li>
+      <li class = "a1"><div class = "subtitle"><!--学校・会社の-->感想</div> <div class = "main"><%= @post.comment_school %></div></li>
+      <!-- 今のままだと、感想の名前が長すぎて改行が発生し、それが原因でレイアウト崩れが生じている。対策が必要。-->
+      <li class = "a1"><div class = "subtitle">社会の感想</div> <div class = "main"><%= @post.comment_social %></div></li>
+      <li class = "a1"><div class = "subtitle">アドバイス</div> <div class = "main"><%= @post.comment_advice %></div></li>
+      <li class = "a1">
+    </ul>
+    <div class = "comment">
+      <%begin%>
+        <div class = "subtitle">Comment</div>
+        <p class = "a2"><div class = "main"><%= @post.comment %></div></p> 
+      <%rescue%>
+        <!--<p class = "a2"><div class = "main" id="NoComment">NoComment</div></p>-->
+      <%end%>
+    </div>
+    <!--
+    <% if current_user && current_user.id == @post.user.id %>
+      <div>
+        <%= link_to "Edit", edit_post_path(@post) %>
+        <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
       </div>
-    </div> 
-<%
-=end%>
+      <div>
+        <%= link_to  "Back", :back %>
+      </div>
+    <% end %>
+    -->
+  </body>
 
-<div class="object">
-<ul class="item_newpost">
-  <div class="email"><label for="email"><div class="email_f">Country: <%= @post.country.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Language: <%= @post.language.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Stay Type: <%= @post.stay_type.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Kind: <%= @post.kind.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Term: <%= @post.term.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Company or school name: <%= @post.school%> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Company or school address: <%= @post.school_address %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Major: <%= @post.major.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">Budget: <%= @post.budget.name %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">国の感想: <%= @post.comment_country %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">学校あるいは会社の感想: <%= @post.comment_school %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">社会の感想: <%= @post.comment_social %> </div></label></div>
-  <div class="email"><label for="email"><div class="email_f">自分からのアドバイス: <%= @post.comment_advice %> </div></label></div>
-
-  
-  
-  <%
-=begin%>
- <li>Language: <%= @post.language.name %></li>
-  <li>Stay type: <%= @post.stay_type.name %></li>
-  <li>Kind: <%= @post.kind.name %></li>
-  <li>Term: <%= @post.term.name %></li>
-  <li>Company or school name: <%= @post.school %></li>
-  <li>Company or school address: <%= @post.school_address %></li>
-  <li>Major: <%= @post.major.name %></li>
-  <li>Budget: <%= @post.budget.name %></li>
-  <li>国の感想: <%= @post.comment_country %></li>
-  <li>学校あるいは会社の感想: <%= @post.comment_school %></li>
-  <li>社会の感想: <%= @post.comment_social %></li>
-  <li>自分からのアドバイス: <%= @post.comment_advice %></li> 
-<%
-=end%>
-</ul>
-</div>
-
-<div>
-  <%
-=begin%>
- <%= image_tag @post.image.url %> 
-<%
-=end%>
-  <%= image_tag @post.image.url %>
-</div>
-
- <%
-=begin%>
- <p>Comment: </p>
-<p><%= @post.comment %></p>  
-<%
-=end%>
-
-<% if current_user && current_user.id == @post.user.id %>
-  <div>
-    <%= link_to "Edit", edit_post_path(@post) %>
-    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
-  </div>
-  <div>
-    <%= link_to  "Back", :back %>
-  </div>
-<% end %>
+</html>

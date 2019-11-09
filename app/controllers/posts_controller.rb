@@ -82,7 +82,7 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(
         :title, 
-        :image [2],  
+        :image,  
         :school,
         :school_address,
         :comment_school,
