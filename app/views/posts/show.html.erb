@@ -1,10 +1,30 @@
 
+
 <html>
   <head>
     <<meta charset="utf-8">>
     <title>ABRRY</title>
     <link rel="stylesheet" href="postpage.css">
   </head>
+
+<div class="object">
+<ul class="item_newpost">
+  <li>Country: <%= @post.country.name %></li>
+  <li>Language: <%= @post.language.name %></li>
+  <li>Stay type: <%= @post.stay_type.name %></li>
+  <li>Kind: <%= @post.kind.name %></li>
+  <li>Term: <%= @post.term.name %></li>
+  <li>Company or school name: <%= @post.school %></li>
+  <li>Company or school address: <%= @post.school_address %></li>
+  <li>Major: <%= @post.major.name %></li>
+  <li>Budget: <%= @post.budget.name %></li>
+  <li>国の感想: <%= @post.comment_country %></li>
+  <li>学校あるいは会社の感想: <%= @post.comment_school %></li>
+  <li>社会の感想: <%= @post.comment_social %></li>
+  <li>自分からのアドバイス: <%= @post.comment_advice %></li>
+</ul>
+</div>
+
 
   <body>
 
