@@ -5,3 +5,47 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "csv"
+
+CSV.foreach('db/csv/gender.csv') do |g|
+  Gender.create(name: g[0])
+end
+
+CSV.foreach('db/csv/countries.csv') do |c|
+  Country.create(name: c[0])
+end
+
+CSV.foreach('db/csv/languages.csv') do |l|
+  Language.create(name: l[0])
+end
+
+CSV.foreach('db/csv/stay_types.csv') do |s|
+  StayType.create(name: s[0])
+end
+
+CSV.foreach('db/csv/kinds.csv') do |k|
+  Kind.create(name: k[0])
+end
+
+CSV.foreach('db/csv/terms.csv') do |t|
+  Term.create(name: t[0])
+end
+
+CSV.foreach('db/csv/budgets.csv') do |b|
+  Budget.create(name: b[0])
+end
+
+CSV.foreach('db/csv/majors.csv') do |m|
+  Major.create(name: m[0])
+end
+
+CSV.foreach('db/csv/users.csv', headers: true) do |u|
+  User.create(
+    name: u['name'],
+    email: u['email'],
+    gender_id: u['gender_id'],
+    image: open("#{Rails.root}/db/user_images/#{u['image']}"),
+    password: 'password'
+  )
+end

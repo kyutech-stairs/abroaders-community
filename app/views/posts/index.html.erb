@@ -1,0 +1,91 @@
+
+<!--スライダーここから-->
+<div class="slideshow-container">
+  <% @posts.first(6).each do |post| %>
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 6</div>
+      <div class="show-img"><%= image_tag post.image_url %></div>
+      <!--<img src="ayaka1.jpg" style="width:100%">-->
+    </div>
+  <%end%>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+    }
+</script>
+<!--スライダーここまで-->
+
+<center>
+  <p><span class="title"> New post </span></p>
+</center>
+
+
+  <!--NewPostの表示ここから-->
+  <main class= container>
+    <% @posts.first(6).each do |post| %>
+      <div class="view view-first">
+          <!--<%= image_tag post.image_url %>-->
+          <!--画像にリンクじゃなくてホバー？の上からリンク飛べるようになりたいです-->
+          <%= link_to image_tag(post.image_url), "/posts/#{post.id}" %>
+
+          <div class="mask">
+            <h2><%= post.title %></h2>
+            <p id="name"><%= post.user.name %></p>
+            <p id="during"><%= post.term.name %></p>
+          </div>
+      </div>
+    <% end %>
+  </main>
+  
+  <!--NewPostの表示ここまで-->
+
+  <script src="dist/js/swiper.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
+      paginationClickable: true,
+    });
+
+  </script>
+  <center>
+    <a href="#" class="btn">View all</a>
+  </center>
+
+  <footer>
+    <p><span class = "Amii">presented by <span class = "A">A</span>mii</span></p>
+  </footer>
+</body>

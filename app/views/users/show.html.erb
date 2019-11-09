@@ -1,0 +1,32 @@
+<%= image_tag @user.image.url %>
+
+<h1><%= @user.name %></h1>
+<p>E-mail: <%= @user.email %></p>
+<p>Gender: <%= @user.gender.name %></p>
+<%
+=begin%>
+ <%= link_to "My Post", root_url(@current_user) %> 
+<%
+=end%>
+
+<% if current_user.id == @user.id %>
+  <div>
+    <%= link_to  "Edit", edit_user_path(@current_user) %>
+    <%= link_to  "Sign out", signout_path, method: :delete %>
+    <%= link_to  "Delete", @current_user, method: :delete, data: { confirm: "Are You Sure?" } %>
+    <%= link_to "Go chat", "/users"%>
+  </div>
+<% else %>
+  <% if @isRoom == true %>
+    <%= link_to "Go Chat", "/rooms/#{@roomId}" %>
+  <% else %>
+    <%= form_with model: @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, value: @user.id %>
+      <% end %>
+      <%= f.submit "Start Chat" %>
+    <% end %>
+  <% end %> 
+<% end %>
+
+<%= link_to  "Back", :back %>

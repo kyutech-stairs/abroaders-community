@@ -1,0 +1,36 @@
+<div class="title">
+  <h1>Mypage</h1>
+</div>
+<div>
+  <%= form_with scope: :session, url: signin_path, local: true do |f| %>
+
+    <div class="email">
+      <label for="email"><%= f.label :email %></label><br>
+      <div class="email_f">
+      <%= f.email_field :email %>
+      </div>
+    </div>
+
+    <div class="password">
+      <label for="password"><%= f.label :password %></label><br>
+      <div class="pass">
+      <%= f.password_field :password %>
+      </div>
+    </div>
+
+    <!--<div class="button">
+      <%= f.submit "Sign in" %>
+    </div>-->
+  
+  <hr>
+
+  <!--<div class="sign_in_up">-->
+    <%= f.submit "Sign in" %>
+    <!--<%= link_to "Sign in", signin_path %>-->
+    <%= link_to "Sign up", signup_path, class: "signup" %>
+  <!--</div>-->
+
+  <% end %>
+</div>
+
+
