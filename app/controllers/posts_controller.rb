@@ -44,7 +44,39 @@ class PostsController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
       @parameter = params[:search].downcase  
-      @results = User.all.where("lower(name) LIKE :search", search: @parameter) 
+      @results = User.all.where("lower(name) LIKE :search", search: "%#{@parameter}%") 
+      # @users = User.all.order(id: :asc)
+    end  
+  end 
+
+  def searchbypost
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else  
+      @parameter = params[:search].downcase
+      # @country = Country.name.where('content LIKE ?', "%#{@parameter}%")  
+       @results = Post.all.where("lower(country_id) LIKE :search", search: "%#{@parameter}%")
+      # @results = Country.posts
+      # @results = Post.where(:your_attribute => search).joins(:country_id).where("posts.some_attribute = ?",search)
+      # @results = User.where(:some_attribute => @parameter).joins(:post).where("posts.your_attribute = ?",@parameter)
+      # @users = User.all.order(id: :asc)
+      # @country = Country.where(name: "%{params[:search]}").first
+      # @country = Country.all.find.where(name: "%{params[:search]}")
+      # @results = @country.where("posts.some_attribute = ?",search)
+      # @country = Country.find(1,2,3,4,5,6)
+      # @results = Country.find(1,2,3,4,5,6).where("lower(country_id) LIKE :search", search: "%#{@parameter}%")
+      # @results = Country.where("lower(country_id) LIKE :search", search: "%#{@parameter}%")
+      # @results = @country.posts
+    end  
+  end 
+
+  def searchbycountry
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else  
+      @parameter = params[:search].downcase  
+      @results = Post.all.where("lower(:country_id) LIKE :search", search: "%#{@parameter}%") 
+      # @users = User.all.order(id: :asc)
     end  
   end 
 

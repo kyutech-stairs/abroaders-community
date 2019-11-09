@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
 
   get '/search' => 'posts#search', :as => 'search_page'
+  get '/searchbypost' => 'posts#searchbypost', :as => 'searchbypost_page'
+ 
 
   # except は only の逆で、指定したアクション以外の全てのアクションに適用する
   resources :users, except: [:new, :create]
