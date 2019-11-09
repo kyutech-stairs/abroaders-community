@@ -9,7 +9,7 @@
       <label for="title">
         <%= f.label :タイトル %> : </label><br>
         <div class="email_f">
-        <%= f.email_field :title %></div>
+        <%= f.text_field :title %></div>
     </div>
 
     <div class="email">
@@ -50,14 +50,14 @@
  <div class="email">
       <label for="email"><%= f.label :学校あるいは会社の名 %>:</label><br>
       <div class="email_f">
-      <%= f.email_field :school %>
+      <%= f.text_field :school %>
       </div>
     </div>
 
  <div class="email">
       <label for="email"><%= f.label :学校あるいは会社の住所 %>:</label><br>
       <div class="email_f">
-      <%= f.email_field :school_address %>
+      <%= f.text_field :school_address %>
       </div>
     </div>
 
@@ -87,28 +87,28 @@
  <div class="email">
       <label for="email"><%= f.label :国の感想 %>:</label><br>
       <div class="email_f">
-      <%= f.email_field :comment_country %>
+      <%= f.text_field :comment_country %>
       </div>
     </div>
 
     <div class="email">
       <label for="email"><%= f.label :学校あるいは会社の感想%>:</label><br>
       <div class="email_f">
-      <%= f.email_field :comment_school %>
+      <%= f.text_field :comment_school %>
       </div>
     </div>
    
   <div class="email">
       <label for="email"><%= f.label :社会の感想%>:</label><br>
       <div class="email_f">
-      <%= f.email_field :comment_social %>
+      <%= f.text_field :comment_social %>
       </div>
     </div>
 
  <div class="email">
       <label for="email"><%= f.label :自分からのアドバイス%>:</label><br>
       <div class="email_f">
-      <%= f.email_field :comment_advice %>
+      <%= f.text_field :comment_advice %>
       </div>
     </div>
 
