@@ -9,39 +9,42 @@
   <body>
 
 
-    <div class = "img">
+    <div class="show-img">
       <%begin%>
         <%= image_tag @post.image.url %> 
       <%rescue%>  
       <%end%>
     </div>
+    <div class = "content-title">
+      <p class ="posttitle"><%= @post.title %></p>
+      <p class = "author">by <%= @post.user.name %></p>
+    </div>
 
-    <p class ="posttitle"><%= @post.title %></p>
-    <p class = "author">by <%= @post.user.name %></p>
-
-    <ul>
-      <li><div class = "subtitle">国</div> <%= @post.country.name %></li>
-      <li><div class = "subtitle">種類</div> <%= @post.kind.name %></li>
-      <li><div class = "subtitle">期間</div> <%= @post.term.name %></li>
-      <li><div class = "subtitle">宿泊形態</div> <%= @post.stay_type.name %></li>
-      <li><div class = "subtitle">学校名</div> <%= @post.school %></li>
-      <li><div class = "subtitle">学校住所</div> <%= @post.school_address %></li>
-      <li><div class = "subtitle">専攻</div> <%= @post.major.name %></li>
-      <li><div class = "subtitle">言語</div> <%= @post.language.name %></li>
-      <li><div class = "subtitle">予算</div> <%= @post.budget.name %></li>
-      <li><div class = "subtitle">国の感想</div> <%= @post.comment_country %></li>
-      <li><div class = "subtitle">学校あるいは会社の感想</div> <%= @post.comment_school %></li>
-      <li><div class = "subtitle">社会の感想</div> <%= @post.comment_social %></li>
-      <li><div class = "subtitle">自分からのアドバイス</div> <%= @post.comment_advice %></li>
+    <ul id="ul_list">
+      <li class = "a1"><div class = "subtitle">国</div><div class = "main"><%= @post.country.name %></div></li>
+      <li class = "a2"><div class = "subtitle">種類</div> <div class = "main"><%= @post.kind.name %></div></li>
+      <li class = "a1"><div class = "subtitle">期間</div> <div class = "main"><%= @post.term.name %></div></li>
+      <li class = "a2"><div class = "subtitle">宿泊形態</div> <div class = "main"><%= @post.stay_type.name %></div></li>
+      <li class = "a1"><div class = "subtitle">学校名</div> <div class = "main"><%= @post.school %></div></li>
+      <li class = "a1"><div class = "subtitle">学校住所</div> <div class = "main"><%= @post.school_address %></div></li>
+      <li class = "a1"><div class = "subtitle">専攻</div> <div class = "main"><%= @post.major.name %></div></li>
+      <li class = "a2"><div class = "subtitle">言語</div> <div class = "main"><%= @post.language.name %></div></li>
+      <li class = "a2"><div class = "subtitle">予算</div> <div class = "main"><%= @post.budget.name %></div></li>
+      <li class = "a1"><div class = "subtitle">国の感想</div> <div class = "main"><%= @post.comment_country %></div></li>
+      <li class = "a1"><div class = "subtitle"><!--学校・会社の-->感想</div> <div class = "main"><%= @post.comment_school %></div></li>
+      <!-- 今のままだと、感想の名前が長すぎて改行が発生し、それが原因でレイアウト崩れが生じている。対策が必要。-->
+      <li class = "a1"><div class = "subtitle">社会の感想</div> <div class = "main"><%= @post.comment_social %></div></li>
+      <li class = "a1"><div class = "subtitle">アドバイス</div> <div class = "main"><%= @post.comment_advice %></div></li>
+      <li class = "a1">
     </ul>
-
+    <div class = "comment">
       <%begin%>
-        <p><div class = "subtitle">Comment</div> </p>
-        <p><%= @post.comment %></p> 
+        <div class = "subtitle">Comment</div>
+        <p class = "a2"><div class = "main"><%= @post.comment %></div></p> 
       <%rescue%>
-        NoComment 
+        <!--<p class = "a2"><div class = "main" id="NoComment">NoComment</div></p>-->
       <%end%>
-
+    </div>
     <% if current_user && current_user.id == @post.user.id %>
       <div>
         <%= link_to "Edit", edit_post_path(@post) %>

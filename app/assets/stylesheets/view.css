@@ -5,7 +5,7 @@ Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
-/*
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -150,7 +150,7 @@ input, select {
 
 /*newpostのとこ*/
 .title{
-  border-bottom: solid 3px #DB7093;
+  border-bottom: solid px #DB7093;
   text-decoration: none;
   color: #000000;
   font-weight: normal;
@@ -163,22 +163,27 @@ input, select {
 
 
 
-<style type="text/css">
+/*<style type="text/css">*/
 
 /*バナー全体のサイズ*/
 .container{
     margin: 0 10%;
     position: relative;
+    /*display: inline-flex;*/
+    /*flex-flow: row wrap;*/
+    /*background-color: #DB7093;*/
 }
+
 main{
 	position:relative;
-  width:80%;
+  width: 80%;
   margin: 0 10%;
-  background-color: ;
+  /*background-color: red;*/
   text-align: center; /* 写真部分をinline-block要素にしたので、それを中央揃えにする　*/
   font-weight: bold;
   font-size: 10px;
 }
+
 .view {
    width: 420px;
    height: 280px;
@@ -187,11 +192,14 @@ main{
    border: 10px solid white;
    text-align: center;
    display: inline-block;
+   /*float: left;*/
+   background-color: #ff9;
 
    overflow: hidden;
    position: relative;
 
    cursor: default;
+   
 }
 .view .mask, .view .content { /*---------- 降りてくるスライド ----------*/
    width: 420px;
