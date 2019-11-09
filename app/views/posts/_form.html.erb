@@ -12,40 +12,39 @@
         <%= f.email_field :title %></div>
     </div>
 
-
-    <div>
-      <div class="email">
-        <label for="email"><%= f.label :国 %>: </label><br></div>
-        <%= f.collection_select :country_id, Country.all, :id, :name, prompt: "Not selected" %>
-     
+    <div class="email">
+    <label for="email">
+        <%= f.label :国 %>: </label><br>
+        <div class="email_f">
+        <%= f.collection_select :country_id, Country.all, :id, :name, prompt: "Not selected" %> </div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :言語 %>: 
-        <%= f.collection_select :language_id, Language.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+    <div class="email">
+    <label for="email">
+        <%= f.label :言語 %>: </label><br>
+       <div class="email_f">
+        <%= f.collection_select :language_id, Language.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :宿泊形態 %>: 
-        <%= f.collection_select :stay_type_id, StayType.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+    <div class="email">
+    <label for="email">
+        <%= f.label :宿泊形態 %>: </label><br>
+         <div class="email_f">
+        <%= f.collection_select :stay_type_id, StayType.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :留学種類 %>: 
-        <%= f.collection_select :kind_id, Kind.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+    <div class="email">
+    <label for="email">
+        <%= f.label :留学種類 %>:</label><br>
+         <div class="email_f">
+        <%= f.collection_select :kind_id, Kind.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :期間 %>: 
-        <%= f.collection_select :term_id, Term.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+    <div class="email">
+    <label for="email">
+        <%= f.label :期間 %>: </label><br>
+         <div class="email_f">
+        <%= f.collection_select :term_id, Term.all, :id, :name, prompt: "Not selected" %></div>
     </div>
  
  <div class="email">
@@ -63,24 +62,25 @@
     </div>
 
   
-    <div>
-      <h4>
-        <%= f.label :専攻 %>: 
-         <%= f.collection_select :major_id, Major.all, :id, :name, prompt: "Not selected" %>
-      </h4>
-    </div>
-    <div>
-      <h4>
-        <%= f.label :予算 %>: 
-         <%= f.collection_select :budget_id, Budget.all, :id, :name, prompt: "Not selected" %>
-      </h4>
+    <div class="email">
+    <label for="email">
+        <%= f.label :専攻 %>: </label><br>
+         <div class="email_f">
+         <%= f.collection_select :major_id, Major.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div>
-      <h4>
-        <%= f.label :写真 %>: 
-        <%= f.file_field :image, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
-      </h4>
+    <div class="email">
+    <label for="email">
+        <%= f.label :予算 %>:  </label><br>
+         <div class="email_f">
+         <%= f.collection_select :budget_id, Budget.all, :id, :name, prompt: "Not selected" %></div>
+    </div>
+
+    <div class="email">
+    <label for="email">
+        <%= f.label :写真 %>: </label><br>
+        <div class="email_f">
+        <%= f.file_field :image, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %></div>
     </div>
 
 
@@ -117,5 +117,7 @@
       <%= f.submit yield(:button_text) %>
     </div>
   <% end %>
+
   <%= link_to  "Back", :back %>
+
 </div>
