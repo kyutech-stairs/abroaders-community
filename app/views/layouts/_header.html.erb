@@ -8,7 +8,7 @@
   <%= link_to  "All Users", users_path %>
   <%= link_to  "New post", new_post_path %>
 
-  <%= form_tag(search_page_path, :method => "get",   
+  <%= form_tag(searchbypost_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
     <div class="email_f"><%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>  
@@ -18,7 +18,7 @@
   </div>  
 <% end %>
 
-   <%= form_tag(searchbypost_page_path, :method => "get",   
+   <%= form_tag(searchbypost_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
     <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
