@@ -56,6 +56,8 @@ class PostsController < ApplicationController
     else  
       @parameter = params[:search].downcase
       
+      # @results = Post.joins(:country, :user).where("countries.name LIKE ?", "#{params[:search].downcase}%")
+      # @results = Post.joins(:country, :user).where("countries.name or users.name LIKE ?", "#{params[:search].downcase}%")
       @results = Post.joins(:country).where("countries.name LIKE ?", "#{params[:search].downcase}%")
       # @results = Post.joins(:country, :language).where("countries.name LIKE ?", "languages.name LIKE ?" "#{params[:search].downcase}%")
       # @results = Post.joins(:country, :language).where("countries.name LIKE ?", "#{params[:search].downcase}%")("languages.name LIKE ?", "#{params[:search].downcase}%")
