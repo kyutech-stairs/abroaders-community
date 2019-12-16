@@ -23,4 +23,8 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show, :index]
+
+  resources :posts
+  get '/upload_photos' => 'photos#upload_photos', as: :upload_photos
+  post '/upload' => 'photos#upload', as: :upload
 end

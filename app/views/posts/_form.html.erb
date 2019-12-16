@@ -82,6 +82,7 @@
         <div class="email_f">
         <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png" %></    </div>
 
+<%= f.file_field :avatars, multiple: true %>
 
  <div class="email">
       <label for="email"><%= f.label :国の感想 %>:</label><br>

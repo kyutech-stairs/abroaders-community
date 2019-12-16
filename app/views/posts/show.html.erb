@@ -1,5 +1,3 @@
-
-
 <html>
   <head>
     <<meta charset="utf-8">>
@@ -18,6 +16,88 @@
       <%rescue%>  
       <%end%>
     </div>
+
+    
+      <%
+=begin%>
+ <% @post.avatars.each do |image| %>
+        <%= image_tag @post.avatars.url %> 
+        <%end%> 
+<%
+=end%>
+     
+<% @post.avatars.each do |k| %>
+  <%= image_tag k.avatar.url %>
+<% end %>
+
+    <%
+=begin%>
+ <div class="show-img">
+      <%begin%>
+        <%= image_tag @post.avatars.url %> 
+      <%rescue%>  
+      <%end%>
+    </div> 
+<%
+=end%>
+
+<%
+=begin%>
+ <%= form_for @post, html: { multipart: true } do |f| %>
+  <p>
+    <label>My Avatar</label>
+    <%= image_tag(@post.avatar_url) if @post.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </p>
+<% end %> 
+<%
+=end%>
+
+<%
+=begin%>
+ <% @post.avatars.each do |a| %>
+   <%= image_tag (a.avatar[].url) %>
+<% end %> 
+<%
+=end%>
+
+<%
+=begin%>
+ <% @post.avatars.each do |image| %>
+  <%= image_tag (@post.avatar.url) %>
+<% end %> 
+<%
+=end%>
+
+<%
+=begin%>
+ <% @post.avatars.each do |image| %>
+  <%= image_tag @post.avatars_url %>
+<% end %> 
+<%
+=end%>
+
+  <%
+=begin%>
+ <%if @post.avatars.present?%>
+  <div>
+    <% @post.avatars[].each do | image |%>
+      <%= image_tag (@post.image_url[])%>
+<% end%> 
+  </div>
+<% end%> 
+<%
+=end%>
+
+<%
+=begin%>
+ <% @post.avatars.each do |p| %>
+  <%= image_tag p.avatars[1].url %>
+<% end %> 
+<%
+=end%>
+
     <div class = "content-title">
       <p class ="posttitle"><%= @post.title %></p>
       <p class = "author">by <%= @post.user.name %></p>

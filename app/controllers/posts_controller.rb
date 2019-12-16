@@ -79,6 +79,25 @@ class PostsController < ApplicationController
     end  
   end 
 
+  def upload_photos
+  end
+  
+  def upload
+      @photo = Photo.new(image: params[:file])
+      parsed = Photo.parse_filename(params[:name])
+      @photo.title = parsed[:title]
+      if @photo.save
+        head 200
+      end
+    end
+
+    def self.parse_filename(filename)
+      filename.gsub!(/(.jpg|.png)/, '')
+      return nil unless filename =~ /^\w*-(([a-zA-Z])*(_|$))*/
+      filename.split('_').join(' ')
+      {title: filename}
+    end
+    
   private
     def set_post
       @post = Post.find(params[:id])
@@ -101,7 +120,8 @@ class PostsController < ApplicationController
         :kind_id,
         :term_id,
         :budget_id,
-        :major_id
+        :major_id,
+        {avatars: []}
       )
     end
 end
