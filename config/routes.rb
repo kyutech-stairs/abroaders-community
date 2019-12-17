@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get   '/signin', to: 'sessions#new'
   post  '/signin', to: 'sessions#create'
 
+  get   '/allpost', to: 'posts#index2'
+  post  '/allpost', to: 'sessions#create'
+
   delete '/signout', to: 'sessions#destroy'
 
   # get '/search' => 'posts#search', :as => 'search_page'

@@ -1,7 +1,6 @@
-
 <!--スライダーここから-->
 <div class="slideshow-container">
-  <% @posts.first(6).each do |post| %>
+  <% @posts.each do |post| %>
     <div class="mySlides fade">
       <div class="numbertext">1 / 6</div>
       <div class="show-img"><%= image_tag post.image_url %></div>
@@ -44,7 +43,7 @@
 
   <!--NewPostの表示ここから-->
   <main class= container>
-    <% @posts.first(6).each do |post| %>
+    <% @posts.each do |post| %>
       <div class="view view-first">
           <!--<%= image_tag post.image_url %>-->
           <!--画像にリンクじゃなくてホバー？の上からリンク飛べるようになりたいです-->
@@ -81,10 +80,6 @@
     });
 
   </script>
-  <center>
-    <a href="#" class="btn">View all</a>
-    <%= link_to 'View all', allpost_path %>
-  </center>
 
   <footer>
     <p><span class = "Amii">presented by <span class = "A">A</span>mii</span></p>

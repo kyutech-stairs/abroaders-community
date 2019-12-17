@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
   end
 
+  def index2
+    @posts = Post.all.order(created_at: :desc)
+  end
+
   def show
     @post_attaches = @post.post_attaches.all
   end
