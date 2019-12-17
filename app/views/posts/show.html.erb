@@ -9,117 +9,12 @@
 
   <body>
 
-
     <div class="show-img">
       <%begin%>
         <%= image_tag @post.image.url %> 
       <%rescue%>  
       <%end%>
     </div>
-
-    
-      <%
-=begin%>
- <% @post.avatars.each do |image| %>
-        <%= image_tag @post.avatars.url %> 
-        <%end%> 
-<%
-=end%>
-     
-<%
-=begin%>
- <% @post.avatars.each do |k| %>
-  <%= image_tag k.avatar.url %>
-<% end %> 
-<%
-=end%>
-
-<% @post_attaches.each do |p| %>
-<%= image_tag p.avatar_url %>
-<% end %>
-
-<%
-=begin%>
- <%= image_tag @post_attach.avatar %>
-<%= form_for(@post_attach) do |f| %>
-  <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.file_field :avatar %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %> 
-<%
-=end%>
-
-    <%
-=begin%>
- <div class="show-img">
-      <%begin%>
-        <%= image_tag @post.avatars.url %> 
-      <%rescue%>  
-      <%end%>
-    </div> 
-<%
-=end%>
-
-<%
-=begin%>
- <%= form_for @post, html: { multipart: true } do |f| %>
-  <p>
-    <label>My Avatar</label>
-    <%= image_tag(@post.avatar_url) if @post.avatar? %>
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
-  </p>
-<% end %> 
-<%
-=end%>
-
-<%
-=begin%>
- <% @post.avatars.each do |a| %>
-   <%= image_tag (a.avatar[].url) %>
-<% end %> 
-<%
-=end%>
-
-<%
-=begin%>
- <% @post.avatars.each do |image| %>
-  <%= image_tag (@post.avatar.url) %>
-<% end %> 
-<%
-=end%>
-
-<%
-=begin%>
- <% @post.avatars.each do |image| %>
-  <%= image_tag @post.avatars_url %>
-<% end %> 
-<%
-=end%>
-
-  <%
-=begin%>
- <%if @post.avatars.present?%>
-  <div>
-    <% @post.avatars[].each do | image |%>
-      <%= image_tag (@post.image_url[])%>
-<% end%> 
-  </div>
-<% end%> 
-<%
-=end%>
-
-<%
-=begin%>
- <% @post.avatars.each do |p| %>
-  <%= image_tag p.avatars[1].url %>
-<% end %> 
-<%
-=end%>
 
     <div class = "content-title">
       <p class ="posttitle"><%= @post.title %></p>
@@ -152,17 +47,14 @@
         <!--<p class = "a2"><div class = "main" id="NoComment">NoComment</div></p>-->
       <%end%>
     </div>
-    <!--
-    <% if current_user && current_user.id == @post.user.id %>
-      <div>
-        <%= link_to "Edit", edit_post_path(@post) %>
-        <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
-      </div>
-      <div>
-        <%= link_to  "Back", :back %>
-      </div>
-    <% end %>
-    -->
+
+    <div class="show-img">
+<% @post_attaches.each do |p| %>
+<%= image_tag p.avatar_url %>
+<% end %>
+</div>
+
+<%= link_to 'edit post', edit_post_path(@post)%>
   </body>
 
 </html>

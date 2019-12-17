@@ -62,8 +62,6 @@ class PostsController < ApplicationController
     else  
       @parameter = params[:search].downcase  
       @results = User.all.where("lower(name) LIKE :search", search: "%#{@parameter}%") 
-      # @results = User.joins(:countries).where("countries.mail_addr LIKE ?", "%#{params[:search].downcase}%")
-      # @users = User.all.order(id: :asc)
     end  
   end 
 
@@ -72,15 +70,10 @@ class PostsController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
       @parameter = params[:search].downcase
-      
-      # @results = Post.joins(:country, :user).where("countries.name LIKE ?", "#{params[:search].downcase}%")
-      # @results = Post.joins(:country, :user).where("countries.name or users.name LIKE ?", "#{params[:search].downcase}%")
       @results = Post.joins(:country, :language, :term, :budget, :kind, :major).where("lower(countries.name) LIKE :search OR 
       lower(languages.name) LIKE :search OR lower(terms.name) LIKE :search OR lower(budgets.name) LIKE :search OR 
       lower(kinds.name) LIKE :search OR lower(majors.name) LIKE :search", search: "#{params[:search].downcase}%").uniq   
-      # @results = Post.joins(:country, :language).where("countries.name LIKE ? or languages.name LIKE ?", "#{params[:search].downcase}%")
-      # @results = Post.joins(:country, :language).where("countries.name LIKE ?", "languages.name LIKE ?" "#{params[:search].downcase}%")
-      # @results = Post.joins(:country, :language).where("countries.name LIKE ?", "#{params[:search].downcase}%")("languages.name LIKE ?", "#{params[:search].downcase}%")
+      
      
       
     end  
@@ -92,7 +85,6 @@ class PostsController < ApplicationController
     else  
       @parameter = params[:search].downcase  
       @results = Post.all.where("lower(:country_id) LIKE :search", search: "%#{@parameter}%") 
-      # @users = User.all.order(id: :asc)
     end  
   end 
 

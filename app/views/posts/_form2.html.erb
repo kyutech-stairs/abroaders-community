@@ -78,13 +78,16 @@
 
     <div class="email">
     <label for="email">
-        <%= f.label :写真 %>: </label><br>
+        <%= f.label :Top写真 %>: </label><br>
         <div class="email_f">
         <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png" %></    </div>
 
+<div class="email">
+    <label for="email">
+        <%= f.label :他の写真 %>: </label><br>
 <%= f.fields_for :post_attaches do |p| %>
      <div class="field">
-       <%= p.label :avatar %><br>
+       <%= p.label :Avatar %><br>
        <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]" %>
      </div>
    <% end %>
