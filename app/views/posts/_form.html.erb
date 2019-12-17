@@ -82,7 +82,18 @@
         <div class="email_f">
         <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png" %></    </div>
 
-<%= f.file_field :avatars, multiple: true %>
+<%
+=begin%>
+ <%= f.file_field :avatars, multiple: true %> 
+<%
+=end%>
+
+<%= f.fields_for :post_attaches do |p| %>
+     <div class="field">
+       <%= p.label :avatar %><br>
+       <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]" %>
+     </div>
+   <% end %>
 
  <div class="email">
       <label for="email"><%= f.label :国の感想 %>:</label><br>

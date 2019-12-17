@@ -26,9 +26,32 @@
 <%
 =end%>
      
-<% @post.avatars.each do |k| %>
+<%
+=begin%>
+ <% @post.avatars.each do |k| %>
   <%= image_tag k.avatar.url %>
+<% end %> 
+<%
+=end%>
+
+<% @post_attaches.each do |p| %>
+<%= image_tag p.avatar_url %>
 <% end %>
+
+<%
+=begin%>
+ <%= image_tag @post_attach.avatar %>
+<%= form_for(@post_attach) do |f| %>
+  <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %> 
+<%
+=end%>
 
     <%
 =begin%>

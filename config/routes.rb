@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_attaches
   # For details on the DSLq available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'posts#index'
 

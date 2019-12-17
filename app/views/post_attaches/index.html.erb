@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Post Attaches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Avatar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_attaches.each do |post_attach| %>
+      <tr>
+        <td><%= post_attach.post_id %></td>
+        <td><%= post_attach.avatar %></td>
+        <td><%= link_to 'Show', post_attach %></td>
+        <td><%= link_to 'Edit', edit_post_attach_path(post_attach) %></td>
+        <td><%= link_to 'Destroy', post_attach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post Attach', new_post_attach_path %>

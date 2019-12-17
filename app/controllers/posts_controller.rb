@@ -7,18 +7,35 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post_attaches = @post.post_attaches.all
   end
 
   def new
     @post = Post.new
+    @post_attach = @post.post_attaches.build
   end
+
+  #def create
+   # @post = Post.new(post_params)
+    #if @post.save
+     # redirect_to root_url
+    #else
+     # render 'new'
+    #end
+  #end
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to root_url
-    else
-      render 'new'
+ 
+    respond_to do |format|
+      if @post.save
+        params[:post_attaches]['avatar'].each do |a|
+           @post_attach = @post.post_attaches.create!(:avatar => a)
+        end
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      else
+        format.html { render action: 'new' }
+      end
     end
   end
 
@@ -121,7 +138,8 @@ class PostsController < ApplicationController
         :term_id,
         :budget_id,
         :major_id,
-        {avatars: []}
+        {avatars: []},
+        post_attaches_attributes: [:id, :post_id, :avatar]
       )
     end
 end
