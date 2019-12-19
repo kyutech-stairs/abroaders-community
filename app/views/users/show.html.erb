@@ -1,13 +1,14 @@
 <div class = "mypagedetail">
   <p class = "title">Mypage</p>
-
-  <%= image_tag @user.image.url %>
-
-  <p class = "mypage"><%= @user.name %></p>
-  <p>E-mail: <%= @user.email %></p>
-  <p>Gender: <%= @user.gender.name %></p>
-
+  <div class = "mypageimage">
+    <%= image_tag @user.image.url %>
   </div>
+  <div class = "mypagecontents">
+    <p class = "mypage"><%= @user.name %></p>
+    <p>E-mail: <%= @user.email %></p>
+    <p>Gender: <%= @user.gender.name %></p>
+  </div>
+</div>
 <!--
 <%
 =begin%>

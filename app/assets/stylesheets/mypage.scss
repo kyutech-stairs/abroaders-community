@@ -1,8 +1,42 @@
 .mypagedetail{
     font-family: Didot;
     text-align: center;
+    font-size: 30px;
+}
+.mypagetitle{
+    border-bottom: solid px #DB7093;
+    color: #000000;
+    font-weight: normal;
+    font-family: Didot;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 63px;
+  
 }
 
+.mypageimage{
+    float: left;
+    width: 50%;
+}
+/*
+.mypagecontents{
+    
+}
+*/
 .mypagebutton{
+    clear: both;
+    text-decoration: none;
+    
     text-align: center;
+   
+    color: #000000;
+    font-weight: bold;
+    
+    font-family: Didot;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 51px;
+    
 }
