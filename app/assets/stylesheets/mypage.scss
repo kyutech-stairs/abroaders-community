@@ -1,6 +1,5 @@
 .mypagedetail{
     font-family: Didot;
-    text-align: center;
     font-size: 30px;
 }
 .mypagetitle{
@@ -12,12 +11,14 @@
     font-weight: normal;
     font-size: 50px;
     line-height: 63px;
+    text-align: center;
   
 }
 
 .mypageimage{
     float: left;
     width: 50%;
+    text-align: right;
 }
 /*
 .mypagecontents{
