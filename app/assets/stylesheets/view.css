@@ -306,7 +306,7 @@ h1{
 
 }
 */
-</style>
+/*</style>*/
 .inline-block_test {
     display: inline-block;      /* インラインブロック要素にする */
     background-color:  #ccc;    /* 背景色指定 */
