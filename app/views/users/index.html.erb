@@ -1,5 +1,6 @@
+<p class = "chattitle">Who would you like to speak to?</p>
 <% @users.each do |user| %>
-  <div>
+  <div class = "chatallusers">
     <%= link_to user_path(user) do %>
       <%= image_tag user.image.url, size: '160x160' %>
       <strong><%= user.name %></strong>
