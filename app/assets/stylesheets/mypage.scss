@@ -1,43 +1,51 @@
 .mypagedetail{
     font-family: Didot;
     font-size: 30px;
+    padding-top: 30px;
+    
+
 }
 .mypagetitle{
     border-bottom: solid px #DB7093;
     color: #000000;
-    font-weight: normal;
-    font-family: Didot;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
     line-height: 63px;
     text-align: center;
+    padding-bottom:15px;
   
 }
+
+.mypageeg{
+    font-family: Didot;
+    font-size: 27px;
+}
+
 
 .mypageimage{
     float: left;
     width: 50%;
     text-align: right;
 }
-/*
-.mypagecontents{
-    
+
+
+.mypagename{
+    padding-top: 280px;
+    font-size: 50px;    
 }
-*/
+
 .mypagebutton{
     clear: both;
     text-align: center;
-    color: #000000;
     font-weight: bold;
     font-family: Didot;
-   /* font-style: normal;
-    font-weight: normal;*/
     font-size: 30px;
     line-height: 51px;
-}
+    padding-top: 30px;
+} 
 
 .mypagebuttondetail{
     text-decoration: none;
-    
+    color: #000000;
 }

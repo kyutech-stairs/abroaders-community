@@ -4,9 +4,9 @@
     <%= image_tag @user.image.url %>
   </div>
   <div class = "mypagecontents">
-    <p class = "mypage"><%= @user.name %></p>
-    <p>E-mail: <%= @user.email %></p>
-    <p>Gender: <%= @user.gender.name %></p>
+    <p class = "mypagename"><%= @user.name %></p>
+    <p class = "mypageeg">E-mail: <%= @user.email %></p>
+    <p class = "mypageeg">Gender: <%= @user.gender.name %></p>
   </div>
 </div>
 <!--
@@ -18,12 +18,12 @@
 -->
 <div class = "mypagebutton">
   <% if current_user.id == @user.id %>
-    <div class = "mypagebuttondetail">
-      <%= link_to  "Edit", edit_user_path(@current_user) %>
-      <%= link_to  "Sign out", signout_path, method: :delete %>
-      <%= link_to  "Delete", @current_user, method: :delete, data: { confirm: "Are You Sure?" } %>
-      <%= link_to "Go chat", "/users"%>
-    </div>
+    <a class = "mypagebuttondetail">
+      <a><%= link_to  "Edit", edit_user_path(@current_user) %></a>
+      <a><%= link_to  "Sign out", signout_path, method: :delete %></a>
+      <a><%= link_to  "Delete", @current_user, method: :delete, data: { confirm: "Are You Sure?" } %></a>
+      <a><%= link_to "Go Chat", "/users"%>
+    </a>
   <% else %>
     <% if @isRoom == true %>
       <%= link_to "Go Chat", "/rooms/#{@roomId}" %>
