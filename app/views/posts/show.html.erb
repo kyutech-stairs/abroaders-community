@@ -18,8 +18,8 @@
 
     <div class = "content-title">
       <p class ="posttitle"><%= @post.title %></p>
-      <p class = "author">by <%= @post.user.name %></p>
-    <%= link_to "Ask me!", @post.user %>
+      <p class = "author">by <%= @post.user.name %> </p>
+      <p class = "aboutme"><a><%= link_to "About me...", @post.user %></a></p>
     </div>
 
     <ul id="ul_list">
