@@ -36,8 +36,8 @@
       <li class = "a1"><div class = "subtitle"><!--学校・会社の-->感想</div> <div class = "main"><%= @post.comment_school %></div></li>
       <!-- 今のままだと、感想の名前が長すぎて改行が発生し、それが原因でレイアウト崩れが生じている。対策が必要。-->
       <li class = "a1"><div class = "subtitle">社会の感想</div> <div class = "main"><%= @post.comment_social %></div></li>
-      <li class = "a1"><div class = "subtitle">アドバイス</div> <div class = "main"><%= @post.comment_advice %></div></li>
-      <li class = "a1">
+      <li class = "a1"><div class = "subtitle">アドバイス</div> <div class = "advice"><%= @post.comment_advice %></div></li>
+      <!--<li class = "a1">-->
     </ul>
     <div class = "comment">
       <%begin%>
