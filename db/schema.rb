@@ -128,13 +128,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_015520) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "post_id"
-    t.string "avatar"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "image"
@@ -155,10 +148,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_015520) do
     t.bigint "budget_id"
     t.bigint "major_id"
     t.string "photo"
-    t.string "images"
-    t.string "post_attachment"
     t.json "avatars"
-    t.json "pics"
     t.index ["budget_id"], name: "index_posts_on_budget_id"
     t.index ["country_id"], name: "index_posts_on_country_id"
     t.index ["kind_id"], name: "index_posts_on_kind_id"
