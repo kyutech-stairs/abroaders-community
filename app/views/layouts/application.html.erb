@@ -35,9 +35,10 @@
   <%= form_tag(searchbypost_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
-    <div class="email_f"><%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>  
+    <div class="email_f"><%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>      
     <div class="input-group-btn">  
-      <%= button_tag "Search by user", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+      <!--<%= button_tag "Search", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%> --> 
+      <%= button_tag "Search", :class => 'searchbtn',:name => nil%> 
     </div>  
   </div> 
   <% end %> 
