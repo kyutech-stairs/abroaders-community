@@ -1,128 +1,159 @@
-<div>
+<div class="postform">
   <%= form_with model: @post, local: true do |f| %>
     <%# エラーメッセージを表示 %>
     <%= render 'shared/error_messages', model: f.object %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
 
-    <div class="email">
-      <label for="title">
+    <div class="postform-tex">
+      <label for="tex">
         <%= f.label :タイトル %> : </label><br>
-        <div class="email_f">
+        <div class="postform-tex_field">
         <%= f.text_field :title %></div>
     </div>
 
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :国 %>: </label><br>
-        <div class="email_f">
+        <div class="sel_select">
         <%= f.collection_select :country_id, Country.all, :id, :name, prompt: "Not selected" %> </div>
     </div>
 
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :言語 %>: </label><br>
-       <div class="email_f">
+       <div class="sel_select">
         <%= f.collection_select :language_id, Language.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :宿泊形態 %>: </label><br>
-         <div class="email_f">
+         <div class="sel_select">
         <%= f.collection_select :stay_type_id, StayType.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :留学種類 %>:</label><br>
-         <div class="email_f">
+         <div class="sel_select">
         <%= f.collection_select :kind_id, Kind.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :期間 %>: </label><br>
-         <div class="email_f">
+         <div class="sel_select">
         <%= f.collection_select :term_id, Term.all, :id, :name, prompt: "Not selected" %></div>
     </div>
  
- <div class="email">
-      <label for="email"><%= f.label :学校あるいは会社の名 %>:</label><br>
-      <div class="email_f">
+ <div class="postform-tex">
+      <label for="tex"><%= f.label :学校あるいは会社の名 %>:</label><br>
+      <div class="postform-tex_field">
       <%= f.text_field :school %>
       </div>
     </div>
 
- <div class="email">
-      <label for="email"><%= f.label :学校あるいは会社の住所 %>:</label><br>
-      <div class="email_f">
+ <div class="postform-tex">
+      <label for="tex"><%= f.label :学校あるいは会社の住所 %>:</label><br>
+      <div class="postform-tex_field">
       <%= f.text_field :school_address %>
       </div>
     </div>
 
   
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :専攻 %>: </label><br>
-         <div class="email_f">
+         <div class="sel_select">
          <%= f.collection_select :major_id, Major.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div class="email">
-    <label for="email">
+    <div class="postform-sel">
+    <label for="sel">
         <%= f.label :予算 %>:  </label><br>
-         <div class="email_f">
+         <div class="sel_select">
          <%= f.collection_select :budget_id, Budget.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
-    <div class="email">
-    <label for="email">
-        <%= f.label :写真 %>: </label><br>
-        <div class="email_f">
-        <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png" %></    </div>
+    <div class="postform-image">
+      <label for="image" class="image_input">写真</label>
+      <div class="image_field">
+        <%= f.label :image %>
+        <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png", class: "input_default" %>
+      </div>
+    </div>
 
-<%= f.fields_for :post_attaches do |p| %>
+    <!--<div class="postform-image">
+    <label for="image">
+        <%= f.label :写真 %>: </label><br>
+        <div class="input_default">
+        <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png" %></    </div>-->
+
+        <div class="postform-image">
+        <label for="image" class="image_input">写真</label>
+        <%= f.fields_for :post_attaches do |p| %>
+          <div class="image_field">
+            <%= p.label :写真 %>
+            <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]", class: "input_default" %>
+        <% end %>
+        </div>
+      </div>
+
+
+        <!--<div class="postform-image">
+          <%= f.fields_for :post_attaches do |p| %>
+              <%= p.label :写真 %><br>
+              <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]" %>
+            </div>
+          <% end %>
+        </div>-->
+        
+
+
+<!--<%= f.fields_for :post_attaches do |p| %>
      <div class="field">
        <%= p.label :avatar %><br>
        <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]" %>
      </div>
-   <% end %>
+   <% end %>-->
 
- <div class="email">
-      <label for="email"><%= f.label :国の感想 %>:</label><br>
-      <div class="email_f">
+ <div class="postform-tex">
+      <label for="tex"><%= f.label :国の感想 %>:</label><br>
+      <div class="postform-tex_field">
       <%= f.text_field :comment_country %>
       </div>
     </div>
 
-    <div class="email">
-      <label for="email"><%= f.label :学校あるいは会社の感想%>:</label><br>
-      <div class="email_f">
+    <div class="postform-tex">
+      <label for="tex"><%= f.label :学校あるいは会社の感想%>:</label><br>
+      <div class="postform-tex_field">
       <%= f.text_field :comment_school %>
       </div>
     </div>
    
-  <div class="email">
-      <label for="email"><%= f.label :社会の感想%>:</label><br>
-      <div class="email_f">
+  <div class="postform-tex">
+      <label for="tex"><%= f.label :社会の感想%>:</label><br>
+      <div class="postform-tex_field">
       <%= f.text_field :comment_social %>
       </div>
     </div>
 
- <div class="email">
-      <label for="email"><%= f.label :自分からのアドバイス%>:</label><br>
-      <div class="email_f">
+ <div class="postform-tex">
+      <label for="tex"><%= f.label :自分からのアドバイス%>:</label><br>
+      <div class="postform-tex_field">
       <%= f.text_field :comment_advice %>
       </div>
     </div>
 
+    <hr class="postform-style">
 
-    <div>
-      <%= f.submit yield(:button_text) %>
+    <div class="postform-button">
+      <!--<%= f.submit yield(:button_text) %>-->
+      <%= f.submit 'Create new post', :class=>"b" %>
     </div>
-  <% end %>
 
-  <%= link_to  "Back", :back %>
+  <% end %>
+  <%= link_to  "Back", :back, class: "back" %>
 
 </div>
