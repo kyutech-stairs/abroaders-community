@@ -4,7 +4,7 @@
     <%= link_to user_path(user) do %>
       <%= image_tag user.image.url, size: '160x160' %>
       <div class = "chatusername">
-        <strong><%= user.name %></strong>
+        <%= user.name %>
       </div>
     <% end %>
   </div>

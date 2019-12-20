@@ -6,6 +6,16 @@
 .chatallusers{
     display: inline-block;      /* インラインブロック要素にする */
     padding:  20px;             /* 余白指定 */
-    height: 100px;              /* 高さ指定 */
-    background-color: #abc;
+    height: 150px;              /* 高さ指定 */
+    /*background-color: #abc;*/
+}
+
+.chatusername{
+    font-size: 20px;
+    color: #000000;
+    
+}
+
+a {
+    text-decoration: none;
 }
