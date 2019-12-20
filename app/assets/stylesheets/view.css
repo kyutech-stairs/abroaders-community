@@ -331,11 +331,12 @@ h1{
   font-weight: normal;
 }
 
-.btn {
+.viewallbtn {
   /*押したとき*/
   border: solid 1px #000000;
   box-shadow: none;
   text-shadow: none;
+  color: #000000;
 }
 
 /*lastnameのとこ*/
@@ -344,7 +345,6 @@ h1{
 #lastname li {
   width: 140px;
   text-align: center;
-
   display: inline-block;
   font-size: 16px;
 }
