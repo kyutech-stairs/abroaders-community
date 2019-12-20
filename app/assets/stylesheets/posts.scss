@@ -77,7 +77,6 @@ table {
     display: inline-block;
     font-size: 30px;
     margin: 0 0 0 80px; 
-    color: #000000;  
     /*background-color: blue; */
 }
 
@@ -87,6 +86,10 @@ table {
     font-size: 30px;
     margin: 83px 0 0 50px;
     /*background-color: #B33E5C;*/
+}
+
+.aboutme a{
+    color: #000;
 }
 
 ul{
@@ -151,7 +154,7 @@ li{
     font-size: 30px;
     margin: 0 40px 10px;
    /* background-color: green;*/
-    height: 250px /*auto*/ ;
+    height: 130px /*auto*/ ;
     width: 90%;
     border: 2px solid gray;
     border-bottom: 2px solid gray;
