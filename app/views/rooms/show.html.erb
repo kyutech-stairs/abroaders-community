@@ -1,65 +1,66 @@
-<div class="title">
-<h1>DirectMail</h1>
-</div>
+<div class="dm">
+  <div class="dm-title">
+    Direct Mail
+  </div>
 
-<!--<h4>参加者</h4>
-<% @entries.each do |e| %>
-  <h5><strong><%= link_to e.user.name, user_path(e.user) %> さん</strong></h5>
-<% end %>-->
+  <hr class="dm-style">
+  <!--<div class="dm-box">-->
 
-<hr>
 
-<div class="waku">
-  <% if @messages.present? %>
-    <!--②左コメント始-->
-    <% @messages.each do |x| %>
-      <% if x.user_id != current_user.id %>
-        <div class="balloon6">
-          <div class="faceicon">
-            <strong><%= link_to x.user.name, user_path(x.user) %> さん</strong>
+  <div class="waku">
+    <% if @messages.present? %>
+      <!--②左コメント始-->
+      <% @messages.each do |x| %>
+        <% if x.user_id != current_user.id %>
+          <div class="balloon6">
+            <div class="faceicon">
+              <strong><%= link_to x.user.name, user_path(x.user) %></strong>
+            </div>
+            <div class="chatting">
+              <div class="says">
+                <p>
+                  <!--左ふきだし文-->
+                  <strong><%= x.content %></strong>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="chatting">
-            <div class="says">
+        <!--②/左コメント終-->
+        <% else %>
+          <!--③右コメント始-->
+          <div class="mycomment">
+            <!--右ふきだし文-->
+            <div class="mymessage">
               <p>
-                <!--左ふきだし文-->
                 <strong><%= x.content %></strong>
               </p>
             </div>
           </div>
-        </div>
-      <!--②/左コメント終-->
-      <% else %>
-        <!--③右コメント始-->
-        <div class="mycomment">
-          <!--右ふきだし文-->
-          <div class="mymessage">
-            <p>
-              <strong><%= x.content %></strong>
-            </p>
-          </div>
-        </div>
+        <% end %>
       <% end %>
+    <% else %>
+      <div class="em">
+        No messages
+      </div>
     <% end %>
-  <% else %>
-    <div class="em">
-      <h3>No messages</h3>
-    </div>
-  <% end %>
-  <!--/③右コメント終-->
+    <!--/③右コメント終-->
+    
+  <!--</div>-->
+
+    <%= form_with model: @message do |f| %>
+      <hr class="styleline">
+      <!--<%= f.text_field :content, placeholder: "Input your message", size: 70 %>-->
+      <%= f.text_field :content, placeholder: "Input your message" %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <!--<br>-->
+
+      <div class="send">
+        <%= f.submit 'Send', :class=>"sendbtn" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <%= link_to "Back", users_path, class: "back2"%>
   
-  <%= form_with model: @message do |f| %>
-    <%= f.text_field :content, placeholder: "Input your message", size: 70 %>
-    <%= f.hidden_field :room_id, value: @room.id %>
-    <br>
-    <div class="send">
-      <%= f.submit "Send" %>
-    </div>
-  <% end %>
 </div>
-<!--<%= form_with model: @message do |f| %>
-  <%= f.text_field :content, placeholder: "Input your message", size: 70 %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <br>
-  <%= f.submit "Send" %>
-<% end %>-->
-<%= link_to "Back", users_path %>
