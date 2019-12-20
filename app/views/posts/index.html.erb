@@ -3,7 +3,7 @@
 <div class="slideshow-container">
   <% @posts.first(6).each do |post| %>
     <div class="mySlides fade">
-      <div class="numbertext">1 / 6</div>
+      <!--div class="numbertext">1 / 6</div>-->
       <div class="show-img"><%= image_tag post.image_url %></div>
       <!--<img src="ayaka1.jpg" style="width:100%">-->
     </div>
@@ -84,7 +84,7 @@
   <center>
     <!--<a href="allpost_path" class="btn">View all</a>-->
     <div class ="viewallbtn">
-      <%= link_to 'View all', allpost_path %>
+      <a><%= link_to 'View all', allpost_path %></a>
     </div>
   </center>
 <!--

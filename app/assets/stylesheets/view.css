@@ -331,6 +331,9 @@ h1{
   font-weight: normal;
 }
 
+.viewallbtn a{
+  color: #000000;
+}
 .viewallbtn {
   /*押したとき*/
   border: solid 1px #000000;
