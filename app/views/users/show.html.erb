@@ -19,7 +19,7 @@
 <div class = "mypagebutton">
   <% if current_user.id == @user.id %>
     <a class = "mypagebuttondetail">
-      <a><%= link_to  "Edit", edit_user_path(@current_user) %></a>
+      <a ><%= link_to  "Edit", edit_user_path(@current_user) %></a>
       <a><%= link_to  "Sign out", signout_path, method: :delete %></a>
       <a><%= link_to  "Delete", @current_user, method: :delete, data: { confirm: "Are You Sure?" } %></a>
       <a><%= link_to "Go Chat", "/users"%>
