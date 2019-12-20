@@ -1,0 +1,92 @@
+.signinform{
+    &-title{
+    font-family: Didot;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    }
+
+
+    &-email{
+        padding: 30px;
+    }
+
+    .email_f{
+        text-align: center;
+    }
+
+    label[for="email"]{
+        font-family: Didot;
+        font-size: 30px;
+        padding: 1em 14em 2em;
+    }
+
+    input[type="email"]{
+        width: 500px;
+        height: 50px;
+        font-size: 20px;
+        font-family: Didot;
+        background: #C4C4C4;
+    }
+
+    input[type="email"]:focus{
+        border: 1px solid #C4C4C4;
+        outline: none;
+        box-shadow: 0 0 5px 1px #C4C4C4;
+        font-size: 20px;
+        font-family: Didot;
+    }
+
+    &-password{
+        padding: 30px;
+    }
+
+    .pass{
+        text-align: center;
+    }
+
+    label[for="password"]{
+        font-family: Didot;
+        font-size: 30px;
+        padding: 1em 14em 2em;
+    }
+
+    input[type="password"]{
+        width: 500px;
+        height: 50px;
+        font-size: 20px;
+        background: #C4C4C4;
+    }
+
+    input[type="password"]:focus{
+        border: 1px solid #C4C4C4;
+        outline: none;
+        box-shadow: 0 0 5px 1px #C4C4C4;
+        font-size: 20px;
+    }
+
+    &-style{
+        background-color: black;
+        width: 50%;
+        margin: 5% 25%;
+    }
+
+    input[type="submit"]{
+        text-align: left;
+        font-family: Didot;
+        font-size: 31pt;
+        border: none;
+        padding: 1.8em 2em 2em 12em;
+        outline: 0;
+        background-color: white;
+    }
+
+    .signup{
+        font-family: Didot;
+        text-decoration: none;
+        color: #000000;
+        font-size: 40px;
+        padding: 0.5em 2em 2em;
+    }
+}

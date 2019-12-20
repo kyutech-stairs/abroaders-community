@@ -24,11 +24,13 @@
 
   <div id="nav">
     <ul id="nav_bar">
-   <strong><%= link_to "ABRRY", root_url %></strong>
+   <strong><%= link_to "Home", root_url %></strong>
       <%= link_to "Sign in", signin_path %>
       <%= link_to "Sign up", signup_path %>
        <%= link_to  "New post", new_post_path %>
         <%= link_to  "All Users", users_path %>
+        <%= link_to  "Sign out", signout_path, method: :delete %>
+
   <%= form_tag(searchbypost_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
