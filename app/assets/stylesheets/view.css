@@ -383,3 +383,35 @@ span.A {
   font-size: 150%;
   color: #DB7093;
 }
+
+input[type=search]{
+  width: 300px;
+  height: 30px;
+  max-width: 300px;
+  font-family: Didot;
+  border-radius: 1px;
+  font-size: 20px;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+input[type="search"]:focus{
+  border: 1px solid #C4C4C4;
+  outline: none;
+  box-shadow: 0 0 5px 1px #C4C4C4;
+  font-size: 20px;
+  font-family: Didot;
+}
+
+/* input[type="button"]{
+  width: 50px;
+  margin-bottom: 1%;
+} */
+
+.searchbtn{
+  margin-bottom: 2%;
+  width: 60px; 
+  height: 30px;
+  font-family: Didot;
+  font-size: 14px;
+}
