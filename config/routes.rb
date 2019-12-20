@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_attaches
   # For details on the DSLq available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'posts#index'
 
@@ -8,11 +9,17 @@ Rails.application.routes.draw do
   get   '/signin', to: 'sessions#new'
   post  '/signin', to: 'sessions#create'
 
+  get   '/allpost', to: 'posts#index2'
+  post  '/allpost', to: 'sessions#create'
+
   delete '/signout', to: 'sessions#destroy'
 
-  get '/search' => 'posts#search', :as => 'search_page'
-  get '/searchbypost' => 'posts#searchbypost', :as => 'searchbypost_page'
+  # get '/search' => 'posts#search', :as => 'search_page'
+  # get '/searchbypost' => 'posts#searchbypost', :as => 'searchbypost_page'
  
+  # get '/search', to: 'posts#search'
+  get '/searchbypost', to: 'posts#searchbypost'
+  
 
   # except は only の逆で、指定したアクション以外の全てのアクションに適用する
   resources :users, except: [:new, :create]
@@ -20,4 +27,8 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show, :index]
+
+  resources :posts
+  get '/upload_photos' => 'photos#upload_photos', as: :upload_photos
+  post '/upload' => 'photos#upload', as: :upload
 end

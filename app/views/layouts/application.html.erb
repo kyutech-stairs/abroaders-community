@@ -24,9 +24,22 @@
 
   <div id="nav">
     <ul id="nav_bar">
-      <%= link_to "Search", '#' %>
+   <strong><%= link_to "Home", root_url %></strong>
       <%= link_to "Sign in", signin_path %>
       <%= link_to "Sign up", signup_path %>
+       <%= link_to  "New post", new_post_path %>
+        <%= link_to  "All Users", users_path %>
+        <%= link_to  "Sign out", signout_path, method: :delete %>
+
+  <%= form_tag(searchbypost_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <div class="email_f"><%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>  
+    <div class="input-group-btn">  
+      <%= button_tag "Search by user", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div> 
+  <% end %> 
     </ul>
   </div>
 

@@ -21,4 +21,5 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   # carrierwaveのuploaderとuser.imageを結びつけるための記述
   mount_uploader :image, UserImageUploader
+  acts_as_messageable
 end

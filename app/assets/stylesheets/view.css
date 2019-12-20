@@ -141,10 +141,9 @@ input, select {
   font-family: Didot;
   font-style: normal;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 51px;
-
-
+  margin: 0 5%;
 }
 
 

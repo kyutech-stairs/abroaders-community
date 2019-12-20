@@ -1,4 +1,4 @@
-<div>
+<div class="email_f">
   <strong><%= link_to "ABRRY", root_url %></strong>
   <% if current_user %>
     <%= link_to  'My page', user_path(current_user) %>
@@ -8,17 +8,17 @@
   <%= link_to  "All Users", users_path %>
   <%= link_to  "New post", new_post_path %>
 
-  <%= form_tag(search_page_path, :method => "get",   
+  <%= form_tag(searchbypost_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <div class="email_f"><%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>  
     <div class="input-group-btn">  
       <%= button_tag "Search by user", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
     </div>  
   </div>  
 <% end %>
 
-   <%= form_tag(searchbypost_page_path, :method => "get",   
+   <%= form_tag(searchbypost_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
     <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
@@ -26,12 +26,6 @@
       <%= button_tag "Search by post", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
     </div>  
   </div> 
-
- <%
-=begin%>
- <%= select_tag :food_selection, options_for_select([['Search for food', 'foods'], ['Search your food', 'user_foods']]) %> 
-<%
-=end%>
 
 <% end %>
 </div>

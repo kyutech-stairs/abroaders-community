@@ -6,19 +6,40 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
   end
 
+  def index2
+    @posts = Post.all.order(created_at: :desc)
+  end
+
   def show
+    @post_attaches = @post.post_attaches.all
   end
 
   def new
     @post = Post.new
+    @post_attach = @post.post_attaches.build
   end
+
+  #def create
+   # @post = Post.new(post_params)
+    #if @post.save
+     # redirect_to root_url
+    #else
+     # render 'new'
+    #end
+  #end
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to root_url
-    else
-      render 'new'
+ 
+    respond_to do |format|
+      if @post.save
+        params[:post_attaches]['avatar'].each do |a|
+           @post_attach = @post.post_attaches.create!(:avatar => a)
+        end
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      else
+        format.html { render action: 'new' }
+      end
     end
   end
 
@@ -45,7 +66,6 @@ class PostsController < ApplicationController
     else  
       @parameter = params[:search].downcase  
       @results = User.all.where("lower(name) LIKE :search", search: "%#{@parameter}%") 
-      # @users = User.all.order(id: :asc)
     end  
   end 
 
@@ -54,19 +74,12 @@ class PostsController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
       @parameter = params[:search].downcase
-      # @country = Country.name.where('content LIKE ?', "%#{@parameter}%")  
-       @results = Post.all.where("lower(country_id) LIKE :search", search: "%#{@parameter}%")
-      # @results = Country.posts
-      # @results = Post.where(:your_attribute => search).joins(:country_id).where("posts.some_attribute = ?",search)
-      # @results = User.where(:some_attribute => @parameter).joins(:post).where("posts.your_attribute = ?",@parameter)
-      # @users = User.all.order(id: :asc)
-      # @country = Country.where(name: "%{params[:search]}").first
-      # @country = Country.all.find.where(name: "%{params[:search]}")
-      # @results = @country.where("posts.some_attribute = ?",search)
-      # @country = Country.find(1,2,3,4,5,6)
-      # @results = Country.find(1,2,3,4,5,6).where("lower(country_id) LIKE :search", search: "%#{@parameter}%")
-      # @results = Country.where("lower(country_id) LIKE :search", search: "%#{@parameter}%")
-      # @results = @country.posts
+      @results = Post.joins(:country, :language, :term, :budget, :kind, :major).where("lower(countries.name) LIKE :search OR 
+      lower(languages.name) LIKE :search OR lower(terms.name) LIKE :search OR lower(budgets.name) LIKE :search OR 
+      lower(kinds.name) LIKE :search OR lower(majors.name) LIKE :search", search: "#{params[:search].downcase}%").uniq   
+      
+     
+      
     end  
   end 
 
@@ -76,10 +89,28 @@ class PostsController < ApplicationController
     else  
       @parameter = params[:search].downcase  
       @results = Post.all.where("lower(:country_id) LIKE :search", search: "%#{@parameter}%") 
-      # @users = User.all.order(id: :asc)
     end  
   end 
 
+  def upload_photos
+  end
+  
+  def upload
+      @photo = Photo.new(image: params[:file])
+      parsed = Photo.parse_filename(params[:name])
+      @photo.title = parsed[:title]
+      if @photo.save
+        head 200
+      end
+    end
+
+    def self.parse_filename(filename)
+      filename.gsub!(/(.jpg|.png)/, '')
+      return nil unless filename =~ /^\w*-(([a-zA-Z])*(_|$))*/
+      filename.split('_').join(' ')
+      {title: filename}
+    end
+    
   private
     def set_post
       @post = Post.find(params[:id])
@@ -102,7 +133,9 @@ class PostsController < ApplicationController
         :kind_id,
         :term_id,
         :budget_id,
-        :major_id
+        :major_id,
+        {avatars: []},
+        post_attaches_attributes: [:id, :post_id, :avatar]
       )
     end
 end

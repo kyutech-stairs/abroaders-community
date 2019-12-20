@@ -1,17 +1,19 @@
-<div class="title">
-  <h1>Mypage</h1>
+<div class="signinform">
+  <div class="signinform-title">
+   Mypage
 </div>
-<div>
+
+<!--<div>-->
   <%= form_with scope: :session, url: signin_path, local: true do |f| %>
 
-    <div class="email">
+    <div class="signinform-email">
       <label for="email"><%= f.label :email %></label><br>
       <div class="email_f">
       <%= f.email_field :email %>
       </div>
     </div>
 
-    <div class="password">
+    <div class="signinform-password">
       <label for="password"><%= f.label :password %></label><br>
       <div class="pass">
       <%= f.password_field :password %>
@@ -22,7 +24,7 @@
       <%= f.submit "Sign in" %>
     </div>-->
   
-  <hr>
+  <hr class="signinform-style">
 
   <!--<div class="sign_in_up">-->
     <%= f.submit "Sign in" %>
@@ -31,6 +33,7 @@
   <!--</div>-->
 
   <% end %>
+  </div>
 </div>
 
 

@@ -1,6 +1,14 @@
-<div class="title">
-    <h1>Sign up</h1>
+<div class="signupform">
+    <div class="signupform-title">
+        Sign up
+    </div>
+    <% provide(:button_text, 'Create my account') %>
+    <%= render "form", url: signup_path %>
+    <!--<p class="ifmessage">
+        If you have already signed up,
+    </p>-->
+    <!--<%= link_to  "Sign in", signin_path, class: "ifsignin" %>-->
+
+    <!--<%= link_to  "Back", :back, class: "back" %>-->
+
 </div>
-<% provide(:button_text, 'Create my account') %>
-<%= render "form", url: signup_path %>
-<p><%= link_to  "Sign in", signin_path %> if you have already signed up</p>

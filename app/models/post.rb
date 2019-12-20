@@ -16,7 +16,11 @@ class Post < ApplicationRecord
   validates :comment_advice, presence: true
   validates :comment_school, presence: true
   mount_uploader :image, PostImageUploader
-
+  mount_uploaders :avatars, AvatarUploader
+  has_many :avatars
+  accepts_nested_attributes_for :avatars
+  has_many :post_attaches
+   accepts_nested_attributes_for :post_attaches
   # def self.search(search)
   #   where("name LIKE ? OR country LIKE ?", "%#{search}%", "%#{search}%") 
   # end
