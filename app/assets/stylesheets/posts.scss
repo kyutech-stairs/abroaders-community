@@ -84,7 +84,7 @@ table {
     color: #000000;
     display: inline-block;
     font-size: 30px;
-    margin: 83px 0 0 50px;
+    margin: 83px 0 0 20px;
     /*background-color: #B33E5C;*/
 }
 
@@ -131,7 +131,14 @@ li{
     display: inline-block;
 }
 
+.advice{
+    display: inline-block;
+    width: 1000px;
+}
 
+.aaaa{
+    margin-left: 90px;
+}
 .subtitle{
     float: left;
     font-size: 4vh;
@@ -148,18 +155,19 @@ li{
     /*border-bottom: 0.5px solid gray;*/
 }
 
+/*
 .comment{
     font-family: Didot;
     list-style: none;
     font-size: 30px;
-    margin: 0 40px 10px;
+    margin: 0 40px 10px;*/
    /* background-color: green;*/
-    height: 130px /*auto*/ ;
-    width: 90%;
+  /*  height: 130px *//*auto*/ ;
+    /*width: 90%;
     border: 2px solid gray;
     border-bottom: 2px solid gray;
     display: inline-block;
-}
+}*/
 .comment .subtitle{
     /*background-color: blue;*/
     padding-left: 5%;

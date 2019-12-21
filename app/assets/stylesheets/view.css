@@ -149,7 +149,7 @@ input, select {
 
 /*newpostのとこ*/
 .title{
-  border-bottom: solid px #DB7093;
+  border-bottom: solid 3px #DB7093;
   text-decoration: none;
   color: #000000;
   font-weight: normal;
