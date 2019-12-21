@@ -76,6 +76,7 @@
          <%= f.collection_select :budget_id, Budget.all, :id, :name, prompt: "Not selected" %></div>
     </div>
 
+
     <div class="postform-image">
       <label for="image" class="image_input">写真</label>
       <div class="image_field">
@@ -84,13 +85,14 @@
       </div>
     </div>
 
+
     <!--<div class="postform-image">
     <label for="image">
         <%= f.label :写真 %>: </label><br>
         <div class="input_default">
         <%= f.file_field :image, accept: "image/jpeg, image/jpg, image/gif, image/png" %></    </div>-->
 
-        <div class="postform-image">
+       <!--<div class="postform-image">
         <label for="image" class="image_input">写真</label>
         <%= f.fields_for :post_attaches do |p| %>
           <div class="image_field">
@@ -98,9 +100,7 @@
             <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]", class: "input_default" %>
         <% end %>
         </div>
-      </div>
-
-
+      </div>-->
         <!--<div class="postform-image">
           <%= f.fields_for :post_attaches do |p| %>
               <%= p.label :写真 %><br>
@@ -110,11 +110,10 @@
         </div>-->
         
 
-
-<!--<%= f.fields_for :post_attaches do |p| %>
-     <div class="field">
-       <%= p.label :avatar %><br>
-       <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]" %>
+  <!--<%= f.fields_for :post_attaches do |p| %>
+     <div class="avater">
+       <%= f.label :avatar, class: "avlabel" %><br>
+       <%= p.file_field :avatar, :multiple => true, name: "post_attaches[avatar][]", class: "ava_de" %>
      </div>
    <% end %>-->
 

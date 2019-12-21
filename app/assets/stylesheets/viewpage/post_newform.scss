@@ -81,11 +81,11 @@
         color: #DB7093;
     }
 
-    .image_input {
-        height: 0px;
-        padding: 0 auto;
-        display: block;
-    }
+    // .image_input {
+    //     height: 0px;
+    //     padding: 0 auto;
+    //     display: block;
+    // }
 
     .image_field {
         width: 500px;
@@ -99,9 +99,31 @@
         margin: 0 auto;
     }
 
+    // .avlabel{
+    //     font-family: Didot;
+    //     // padding: 0 5em 0 0;
+    // }
+
+    .avater{
+        width: 500px;
+        height: 50px;
+        font-size: 15px;
+        font-family: Didot;
+        background: #C4C4C4;
+        border-radius: 1px;
+        text-align: center;
+        cursor: pointer;
+        // margin: 0 auto;
+        margin-top: 3%;
+    }
+
     .input_default {
         display: none;
     }
+
+    // .ava_de{
+    //     display: none;
+    // }
 
     .image_field > label {
         display: block;
@@ -119,15 +141,7 @@
         margin-top: 1%;
     }
 
-    /* input[type="file"]:hover{
-        outline: none;
-        box-shadow: 0px 0px 5px 1px #C4C4C4; 
-    } */
-
     input[type="image"]:focus{
-        /* border: 1px solid #C4C4C4;
-        outline: none;
-        box-shadow: 0 0 5px 1px #C4C4C4; */
         font-size: 20px;
         font-family: Didot;
     }
