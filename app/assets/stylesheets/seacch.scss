@@ -1,0 +1,29 @@
+.result{
+    &-title{
+        font-size: 40px;
+        font-family: Didot;
+        color: #000000;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .resultallusers{
+        display: inline-block;      /* インラインブロック要素にする */
+        padding:  20px;  
+        width: 160px;           /* 余白指定 */
+        height: 150px;              /* 高さ指定 */
+        /*background-color: #abc;*/
+    }
+    
+    .resultusername{
+        display: inline-block;
+        font-size: 20px;
+        color: #000000;
+        // padding: 20px;
+        
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}

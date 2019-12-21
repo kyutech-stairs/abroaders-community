@@ -1,80 +1,19 @@
-<h3>Search Result by post</h3>  
+<div class="result">
+    <div class="result-title">
+        Search Result by Post 
+    </div>
 
- <%
-=begin%>
- <% @results.each do |result| %>  
- <%= link_to post_path(result) do %>
-        <%= result.title  %><br>  
-    <% end %> 
-     <% end %> 
-
-     <% @results.each do |result| %>  
- <%= link_to user_path(result) do %>
- <%= image_tag result.image.url, size: '160x160' %>
-        <%= result.name  %><br>  
-    <% end %> 
-     <% end %>  
-<%
-=end%>
-
-      <%
-=begin%>
- <% @results.each do |result| %> 
-      <%if countries.name? %> 
- <%= link_to post_path(result) do %>
-        <%= result.title  %><br>  
+    
+    <% @results.each do |result| %> 
+        <div class="resultallusers">
+            <%= link_to post_path(result) do %>
+                <%= image_tag result.image.url, size: '160x160' %>  
+                <div class = "resultusername">
+                    <a>
+                    <%= result.title %>
+                    </a>
+                </div>
+            <% end %> 
+        </div>
     <% end %>
-     <% else %>  
-     <%= link_to user_path(result) do %>
- <%= image_tag result.image.url, size: '160x160' %>
-        <%= result.name  %><br>  
-    <% end %> 
-    <% end %> 
-     <% end %>  
-<%
-=end%>
-
-<%
-=begin%>
- <% @results.each do |result| %> 
- <% if @results == country.name %>
- <%= link_to post_path(result) do %>
-        <%= result.title  %><br>  
-    <% end %> 
-     <% else %>  
-     <% @results.each do |result| %> 
-     <%= link_to user_path(result) do %>
- <%= image_tag result.image.url, size: '160x160' %>
-        <%= result.name  %><br>  
-    <% end %> 
-    <% end %> 
-     <% end %> 
-  <% end %>  
-<%
-=end%>
-
- <%
-=begin%>
- <% @results.each do |result| %> 
- <% if @results == result.country.name %>
- <%= link_to user_path(result) do %>
-      <%= image_tag result.image.url, size: '160x160' %>
-        <%= result.name  %><br>    
-    <% end %> 
-     <% else %> 
-     <%= link_to post_path(result) do %>
-        <%= result.title  %><br>  
-    <% end %> 
-     <% end %>
-      <% end %>    
-<%
-=end%>
- 
- <% @results.each do |result| %> 
- <%= link_to user_path(result) do %>
-      <%= image_tag result.image.url, size: '160x160' %>    
-    <% end %>
-     <%= link_to post_path(result) do %>
-        <%= result.title %><br>  
-    <% end %> 
-      <% end %>   
+</div>   

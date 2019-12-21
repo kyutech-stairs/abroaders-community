@@ -1,8 +1,13 @@
 <h3>Search Result</h3>  
 
- <% @results.each do |result| %>  
- <%= link_to user_path(result) do %>
- <%= image_tag result.image.url, size: '160x160' %>
-        <%= result.name  %><br>  
+<% @results.each do |result| %>  
+    <div class = "searchaaa">
+        <%= link_to user_path(result) do %>
+
+        <%= image_tag result.image.url, size: '160x160' %>
+            <div class = "searchname">
+                <a><%= result.name  %></a>
+            </div>
+    </div> 
     <% end %> 
-     <% end %> 
+<% end %> 
