@@ -35,7 +35,7 @@
 
     <div class="postform-sel">
     <label for="sel">
-        <%= f.label :留学種類 %>:</label><br>
+        <%= f.label :留学種類 %>: </label><br>
          <div class="sel_select">
         <%= f.collection_select :kind_id, Kind.all, :id, :name, prompt: "Not selected" %></div>
     </div>
@@ -48,7 +48,7 @@
     </div>
  
  <div class="postform-tex">
-      <label for="tex"><%= f.label :学校あるいは会社の名 %>:</label><br>
+      <label for="tex"><%= f.label :学校あるいは会社の名前 %>:</label><br>
       <div class="postform-tex_field">
       <%= f.text_field :school %>
       </div>

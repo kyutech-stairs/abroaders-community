@@ -1,6 +1,6 @@
 .postform{
     &-tex{
-        padding: 30px;
+        padding: 40px;
     }
 
     &-tex_field{
@@ -11,7 +11,8 @@
     label[for="tex"]{
         font-family: Didot;
         font-size: 30px;
-        padding: 10em 14em 2em;
+        // padding: 10em 14em 2em;
+        margin: 0 0 0 410px;
     }
 
     input[type="text"]{
