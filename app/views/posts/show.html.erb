@@ -23,20 +23,20 @@
     </div>
 
     <ul id="ul_list">
-      <li class = "a1"><div class = "subtitle">国</div><div class = "main"><%= @post.country.name %></div></li>
-      <li class = "a2"><div class = "subtitle">種類</div> <div class = "main"><%= @post.kind.name %></div></li>
-      <li class = "a1"><div class = "subtitle">期間</div> <div class = "main"><%= @post.term.name %></div></li>
-      <li class = "a2"><div class = "subtitle">宿泊形態</div> <div class = "main"><%= @post.stay_type.name %></div></li>
-      <li class = "a1"><div class = "subtitle">学校名</div> <div class = "main"><%= @post.school %></div></li>
-      <li class = "a1"><div class = "subtitle">学校住所</div> <div class = "main"><%= @post.school_address %></div></li>
-      <li class = "a1"><div class = "subtitle">専攻</div> <div class = "main"><%= @post.major.name %></div></li>
-      <li class = "a2"><div class = "subtitle">言語</div> <div class = "main"><%= @post.language.name %></div></li>
-      <li class = "a2"><div class = "subtitle">予算</div> <div class = "main"><%= @post.budget.name %></div></li>
-      <li class = "a1"><div class = "subtitle">国の感想</div> <div class = "main"><%= @post.comment_country %></div></li>
-      <li class = "a1"><div class = "subtitle"><!--学校・会社の-->感想</div> <div class = "main"><%= @post.comment_school %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 国</div><div class = "main"><%= @post.country.name %></div></li>
+      <li class = "a2"><div class = "subtitle"> | 種類</div> <div class = "main"><%= @post.kind.name %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 期間</div> <div class = "main"><%= @post.term.name %></div></li>
+      <li class = "a2"><div class = "subtitle"> | 宿泊形態</div> <div class = "main"><%= @post.stay_type.name %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 学校名</div> <div class = "main"><%= @post.school %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 学校住所</div> <div class = "main"><%= @post.school_address %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 専攻</div> <div class = "main"><%= @post.major.name %></div></li>
+      <li class = "a2"><div class = "subtitle"> | 言語</div> <div class = "main"><%= @post.language.name %></div></li>
+      <li class = "a2"><div class = "subtitle"> | 予算</div> <div class = "main"><%= @post.budget.name %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 国の感想</div> <div class = "main"><%= @post.comment_country %></div></li>
+      <li class = "a1"><div class = "subtitle"><!--学校・会社の--> | 感想</div> <div class = "main"><%= @post.comment_school %></div></li>
       <!-- 今のままだと、感想の名前が長すぎて改行が発生し、それが原因でレイアウト崩れが生じている。対策が必要。-->
-      <li class = "a1"><div class = "subtitle">社会の感想</div> <div class = "main"><%= @post.comment_social %></div></li>
-      <li class = "a1"><div class = "subtitle">アドバイス</div> <div class = "advice"><%= @post.comment_advice %></div></li>
+      <li class = "a1"><div class = "subtitle"> | 社会の感想</div> <div class = "main"><%= @post.comment_social %></div></li>
+      <li class = "a1"><div class = "subtitle"> | アドバイス</div> <div class = "advice"><%= @post.comment_advice %></div></li>
       <!--<li class = "a1">-->
     </ul>
     <div class = "comment">

@@ -32,14 +32,16 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
  
     respond_to do |format|
-      if @post.save
-        params[:post_attaches]['avatar'].each do |a|
-           @post_attach = @post.post_attaches.create!(:avatar => a)
-        end
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+      # if @post.save
+      #   params[:post_attaches]['avatar'].each do |a|
+      #      @post_attach = @post.post_attaches.create!(:avatar => a)
+      #   end
+      #   format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      # else
+      #   format.html { render action: 'new' }
+      # end
+      @post.save
+      format.html { redirect_to @post, notice: 'Post was successfully created.' }
     end
   end
 
